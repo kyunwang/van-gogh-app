@@ -19,5 +19,5 @@ require('./models/Tour');
 const port = process.env.PORT;
 const server = require('./server');
 server.listen(port, () => {
-	console.log(`Express running → PORT ${server.address().port}`);
+	console.log(`Express running → PORT ${port}`);
 });
