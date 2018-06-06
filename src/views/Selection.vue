@@ -5,12 +5,14 @@
 		<section>List of last half</section>
 		<footer>
 			<section>selection</section>
-			<button @click="test">confirm</button>
+			<button @click="$router.go(-1)">confirm</button>
 		</footer>
 	</div>
 </template>
 
 <script>
+	import Header from '../components/Header.vue';
+
 	export default {
 		props: ['backTo'],
 		data() {
