@@ -26,7 +26,7 @@
 		"Vincent Kempers <me@vncn.tk>",
 		"Kang Yun Wang <wangkevin0987@gmail.com"
 	],
-	"license": "MIT",
+	"license": "GPLv3",
 	"bugs": {
 		"url": "https://github.com/VincentKempers/van-gogh-app/issues"
 	},
