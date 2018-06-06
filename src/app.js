@@ -1,28 +1,17 @@
-const Vue = require('vue');
+import Vue from 'vue';
+import App from './App.vue';
 
-const App = require('./App.vue');
+import { createRouter } from './router';
 
-const { createRouter } = require('./router');
-
-// export a factory function for creating fresh app, router and store
-// instances
-const createApp = context => {
+function createApp() {
 	const router = createRouter();
-
 	const app = new Vue({
 		router,
-		// the root instance simply renders the App component.
+		el: '#app',
 		render: h => h(App),
 	});
 
 	return { app, router };
+}
 
-	// return new Vue({
-	// 	data: {
-	// 		url: context.url,
-	// 	},
-	// 	template: `<div>The visited URL is: {{ url }}</div>`,
-	// });
-};
-
-module.exports = createApp;
+export { createApp };

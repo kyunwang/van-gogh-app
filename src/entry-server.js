@@ -1,27 +1,24 @@
-const { createApp } = require('./app');
+import { createApp } from './app';
 
-const serverRender = context => {
-	// since there could potentially be asynchronous route hooks or components,
-	// we will be returning a Promise so that the server can wait until
-	// everything is ready before rendering.
+function createServer(context) {
 	return new Promise((resolve, reject) => {
+		// Get app & router from createApp
 		const { app, router } = createApp();
 
-		// set server-side router's location
+		// Push (current?) route to
 		router.push(context.url);
 
-		// wait until router has resolved possible async components and hooks
+		// When router is ready
 		router.onReady(() => {
 			const matchedComponents = router.getMatchedComponents();
-			// no matched routes, reject with 404
+
 			if (!matchedComponents.length) {
 				return reject({ code: 404 });
 			}
 
-			// the Promise should resolve to the app instance so it can be rendered
 			resolve(app);
 		}, reject);
 	});
-};
+}
 
-module.exports = serverRender;
+export default createServer;

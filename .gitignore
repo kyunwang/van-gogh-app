@@ -64,3 +64,5 @@ vars.*.env
 
 # ds_Store
 .DS_Store
+
+dist

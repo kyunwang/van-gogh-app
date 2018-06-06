@@ -1,8 +1,8 @@
-const { createApp } = require('./app');
+import { createApp } from './app';
 
-// client-specific bootstrapping logic...
+const { app, router } = createApp();
 
-const { app } = createApp();
-
-// this assumes App.vue template root element has `id="app"`
-app.$mount('#app');
+// When the router is ready mount the app
+router.onReady(() => {
+	app.$mount('#app');
+});
