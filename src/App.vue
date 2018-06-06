@@ -23,3 +23,11 @@
 		}
 	};
 </script>
+
+
+
+<style lang="scss">
+	html, body {
+		background :#9C0E1C;
+	}
+</style>
