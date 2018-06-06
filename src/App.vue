@@ -8,14 +8,15 @@
 </template>
 
 <script>
-	export default {
-		name: 'app',
-		data() {
-			return {
-				title: 'hello'
-			}
-		}
-	};
+export default {
+	name: 'app',
+	data() {
+		return {
+			title: 'hello',
+		};
+	},
+};
 </script>
 
-<style></style>
+<style>
+</style>
