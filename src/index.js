@@ -13,8 +13,9 @@ mongoose.connection.on('error', err => {
 // READY?! Let's go!
 
 // Importing all our models
-require('./models/Tour');
 
+require('./models/Tour');
+require('./models/Painting');
 // Start our app!
 const port = process.env.PORT;
 const server = require('./server');
