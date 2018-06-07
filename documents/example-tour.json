@@ -12,7 +12,7 @@
 				"type": "main tour",
 				"painting": "Aardappeleters",
 				"painting_no": "50",
-				"location": "floor 1",
+				"location": 1,
 				"origin": "Vincent van Gogh (1853 - 1890), Nuenen, april-mei 1885",
 				"description":
 					"Van Gogh zag De aardappeleters als een meesterproef. Hij koos een moeilijke compositie om te bewijzen dat hij op weg was een goede figuurschilder te worden. Het schilderij moest de realiteit van het harde boerenleven verbeelden.",
@@ -25,7 +25,7 @@
 				"type": "related",
 				"painting": "Kop van een skelet met brandende sigaret",
 				"painting_no": "41",
-				"location": "Floor 1",
+				"location": 1,
 				"origin": "Vincent van Gogh (1853 - 1890), Antwerpen, januari-februari 1886",
 				"description":
 					"Dit skelet met een brandende sigaret is een studentikoze grap. Van Gogh schilderde het in de tijd dat hij lessen volgde aan de Antwerpse kunstacademie, begin 1886. Het schilderij laat zien dat hij de anatomie goed beheerste.",
@@ -38,7 +38,7 @@
 				"type": "related",
 				"painting": "Zelfportret met grijze vilthoed",
 				"painting_no": "14",
-				"location": "Floor 1",
+				"location": 1,
 				"origin": "Vincent van Gogh (1853 - 1890), Parijs, september-oktober 1887",
 				"description":
 					"Van Gogh schilderde dit zelfportret in de winter van 1887-1888, toen hij al bijna twee jaar in Parijs woonde. Het werk laat zien dat hij de stippeltechniek van de pointillisten had bestudeerd en op zijn eigen, originele manier toepaste. De streepjes verf zijn in verschillende richtingen geplaatst. Ze volgen de omtrek van zijn hoofd en vormen zo een soort aureool.",
@@ -51,7 +51,7 @@
 				"type": "related",
 				"painting": "Tuin met geliefde",
 				"painting_no": "18",
-				"location": "Floor 1",
+				"location": 1,
 				"origin": "Square Saint Pierre 1887",
 				"description": "A painting about the square in Saint pierre",
 				"visited": false
@@ -63,7 +63,7 @@
 				"type": "related",
 				"painting": "De roze boomgaard",
 				"painting_no": "2",
-				"location": "Floor 1",
+				"location": 1,
 				"origin": "De roze boomgaard 1888",
 				"description": "A Painting about the tree garden",
 				"visited": false
@@ -75,7 +75,7 @@
 				"type": "main tour",
 				"painting": "Sunflowers",
 				"painting_no": "76",
-				"location": "Floor 1",
+				"location": 1,
 				"origin": "sunflowers 1889",
 				"description": "The famous sunflower painting of van Gogh ",
 				"visited": true
@@ -87,7 +87,7 @@
 				"type": "main tour",
 				"painting": "the Yellow house",
 				"painting_no": "4",
-				"location": "Floor 1",
+				"location": 1,
 				"origin": "The street 1888",
 				"description": "The yellow house where van Gogh lived for a while",
 				"visited": true
@@ -99,7 +99,7 @@
 				"type": "related",
 				"painting": "The chair of Gaugain",
 				"painting_no": "53",
-				"location": "Floor 1",
+				"location": 1,
 				"origin": "1888",
 				"description": "The chair Gaugain always sat on.",
 				"visited": true
