@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Home from './views/Home.vue';
 import About from './views/About.vue';
+import Selection from './views/Selection.vue';
 
 Vue.use(Router);
 
@@ -21,6 +22,11 @@ function createRouter() {
 				path: '/about',
 				name: 'about',
 				component: About,
+			},
+			{
+				path: '/selection',
+				name: 'selection',
+				component: Selection,
 			},
 		],
 	});

@@ -13,7 +13,7 @@ const Tour = new Schema({
 		type: Date,
 		default: Date.now(),
 	},
-	origin: [
+	tour: [
 		{
 			id: {
 				type: Number,
@@ -21,7 +21,13 @@ const Tour = new Schema({
 			},
 			startTime: String,
 			endTime: String,
-			attr: String,
+			kind: String,
+			painting: String,
+			painting_no: String,
+			location: Number,
+			origins: String,
+			description: String,
+			visited: Boolean,
 		},
 	],
 	went: [],
