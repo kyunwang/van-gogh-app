@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 main {
 	h1 {
-		margin: 0 auto;
+		margin: 0 0.5em;
 	}
 }
 section {
