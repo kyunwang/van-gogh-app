@@ -13,18 +13,19 @@
 				<div class='text-image'>
 				<img src="https://www.arlestourisme.com/assets/components/phpthumbof/cache/van_gogh_cafe.b349b397fbeeb31f34f671c94d95eb3f16.jpg" alt="people sitting in a restaurant painting">
 				<div class="text-block">
-					<h4>Personalised tour</h4>
+					<h4>Open tour</h4>
 				</div>
 			</div>
 				<div class='text-image'>
 				<img src="https://www.arlestourisme.com/assets/components/phpthumbof/cache/van_gogh_cafe.b349b397fbeeb31f34f671c94d95eb3f16.jpg" alt="people sitting in a restaurant painting">
 				<div class="text-block">
-					<h4>Personalised tour</h4>
+					<h4>Highlight tour</h4>
 				</div>
 			</div>
 			</div>
 		</section>
 		<section>
+			<h2>van Gogh Japan collection</h2>
 			<div class='text-image'>
 				<router-link to="/selection"><img src="https://img.whichmuseum.com/van-gogh-museum/large/van-gogh-japan.png" alt="people sitting in a restaurant painting">
 				<div class="text-block">
@@ -48,11 +49,11 @@ export default {
  
 <style lang="scss" scoped>
 section {
-	margin-left: 1em;
+	margin: 1rem 0.8rem;
 
 	.text-image {
 		position: relative;
-		width: 90%;
+		width: 100%;
 		img {
 			width: 100%;
 		}
@@ -71,15 +72,18 @@ section {
 .pictures-in-twos {
 	display: flex;
 	flex-direction: row;
-	width: 90%;
+	width: 100%;
 	div {
-		width: 90%;
+		width: 100%;
+		.text-block {
+			width: 6em;
+		}
 		img {
 			height: 15em;
 		}
 	}
 	div:first-of-type {
-		margin-right: 0.6em;
+		margin-right: 0.2em;
 	}
 }
 </style>
