@@ -25,7 +25,7 @@
 			</div>
 		</section>
 		<section>
-			<h2>van Gogh Japan collection</h2>
+			<h2>Van Gogh Japan collection</h2>
 			<div class='text-image'>
 				<router-link to="/selection"><img src="https://img.whichmuseum.com/van-gogh-museum/large/van-gogh-japan.png" alt="people sitting in a restaurant painting">
 				<div class="text-block">
@@ -48,6 +48,11 @@ export default {
 </script>
  
 <style lang="scss" scoped>
+main {
+	h1 {
+		margin: 0 auto;
+	}
+}
 section {
 	margin: 1rem 0.8rem;
 
