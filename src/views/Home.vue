@@ -11,12 +11,14 @@
 			</div>
 			<div class="pictures-in-twos">
 				<div class='text-image'>
+
 				<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Vincent_Willem_van_Gogh_128.jpg" alt="people sitting in a restaurant painting">
 				<div class="text-block">
 					<h4>Open tour</h4>
 				</div>
 			</div>
 				<div class='text-image'>
+
 				<img src="https://www.vangoghgallery.com/catalog/image/0320/Self-Portrait.jpg" alt="people sitting in a restaurant painting">
 				<div class="text-block">
 					<h4>Highlight tour</h4>
