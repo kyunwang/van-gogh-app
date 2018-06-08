@@ -1,30 +1,39 @@
 <template>
 	<header>
-		<h3 @click="goBack">header</h3>
-		<p @click="checkRoute">CHECK</p>
+		<router-link to="/" >
+			<icon-back></icon-back>
+		</router-link>
 	</header>
 </template>
 
 <script>
-export default {
-	props: [],
-	data() {
-		return {};
-	},
-	methods: {
-		goBack() {
-			if (this.$route.path !== '/') {
-				console.log('Going back');
+	import IconBack from './icons/IconBack.vue';
 
-				this.$router.go(-1);
+	export default {
+		props: [],
+		components: {
+			IconBack
+		},
+		data() {
+			return {};
+		},
+		methods: {
+			goBack() {
+				if (this.$route.path !== '/') {
+					console.log('Going back');
+					this.$router.go(-1);
+				}
+			},
+			checkRoute() {
+				console.log(this.$route);
 			}
-		},
-		checkRoute() {
-			console.log(this.$route);
-		},
-	},
-};
+		}
+	};
 </script>
 
 <style lang="scss" scoped>
+	header {
+		padding: .4rem .8rem;
+		color: #f3f3f3;
+	}
 </style>

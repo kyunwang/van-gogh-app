@@ -4,9 +4,11 @@
 	"description": "Application for the van Gogh Museum",
 	"main": "server.js",
 	"scripts": {
+		"initt": "eslint --init",
 		"dev": "run-p dev:client dev:server dev:start",
-		"dev:start": "node -e \"setTimeout(()=>{}, 3000)\" && nodemon src/index.js --inspect --ignore",
+		"dev:start": "node -e \"setTimeout(()=>{}, 2000)\" && nodemon src/index.js --inspect --ignore",
 		"dev:client": "webpack-dev-server -d --hot --config config/webpack.client.config.js",
+		"dev:client-s": "webpack-serve --config config/webpack.client.config.js",
 		"dev:server": "webpack --watch --config config/webpack.server.config.js",
 		"start": "cross-env NODE_ENV=production node src/index.js",
 		"build": "rimraf dist && npm run build:client && npm run build:server",
@@ -43,6 +45,9 @@
 		"babel-core": "^6.26.0",
 		"babel-loader": "^7.1.2",
 		"css-loader": "^0.28.7",
+		"eslint": "^4.19.1",
+		"eslint-config-prettier": "^2.9.0",
+		"eslint-plugin-vue": "^4.5.0",
 		"extract-text-webpack-plugin": "^3.0.1",
 		"html-webpack-plugin": "^3.2.0",
 		"memory-fs": "^0.4.1",
@@ -58,6 +63,7 @@
 		"webpack-dev-server": "^2.9.1",
 		"webpack-hot-middleware": "^2.19.1",
 		"webpack-merge": "^4.1.0",
-		"webpack-node-externals": "^1.6.0"
+		"webpack-node-externals": "^1.6.0",
+		"webpack-serve": "^1.0.3"
 	}
 }

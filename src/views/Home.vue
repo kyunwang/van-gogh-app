@@ -42,13 +42,13 @@
 </template>
 
 <script>
-export default {
-	data() {
-		return {
-			title: 'Choose your tour',
-		};
-	},
-};
+	export default {
+		data() {
+			return {
+				title: 'Home page'
+			};
+		}
+	};
 </script>
  
 <style lang="scss" scoped>
