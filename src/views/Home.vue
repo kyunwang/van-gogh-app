@@ -42,19 +42,20 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Home page'
-			};
-		}
-	};
+export default {
+	data() {
+		return {
+			title: 'Home page',
+		};
+	},
+};
 </script>
  
 <style lang="scss" scoped>
 main {
 	h1 {
 		margin: 0 0.5em;
+		color: white;
 	}
 }
 section {
