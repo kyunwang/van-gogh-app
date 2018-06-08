@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="449px" height="447px" viewBox="0 0 449 447" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Floor1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="51" y="211" width="101" height="20"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Floor1" transform="translate(2.000000, 2.000000)">
+            <polygon id="Path-2" stroke="#000000" stroke-width="4" fill="#FFFFFF" points="81.5924658 247.060486 95.9760274 247.060486 95.9760274 147.727901 125.479452 147.727901 125.479452 96.7991784 95.9760274 96.7991784 95.9760274 21.7582406 144.657534 21.7582406 144.657534 0 292.876712 0 292.876712 21.7582406 395.629281 21.7582406 395.629281 194.521149 445 194.521149 445 295.1183 395.629281 295.1183 395.629281 247.060486 360.141267 247.060486 360.141267 273.736012 292.876712 273.736012 292.876712 318.025758 345.291096 318.025758 345.291096 443 -1.13686838e-13 443 -1.13686838e-13 247.060486"></polygon>
+            <g id="inside-lines" transform="translate(95.000000, 83.000000)">
+                <path d="M3.57311321,273.571429 L3.57311321,320.800786" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M52.1674528,213.571429 L52.1674528,267.857143" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M132.205189,269.285714 L132.205189,323.571429" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M52.1674528,327.857143 L52.1674528,359.285714" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <g id="Rectangle">
+                    <use fill="#696969" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#656565" stroke-width="3" x="52.5" y="212.5" width="98" height="17"></rect>
+                </g>
+                <path d="M197.950472,150.714286 L197.950472,182.142857" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M300.856132,142.142857 L300.856132,159.285714" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M197.950472,0.714285714 L197.950472,99.2857143" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M227.964623,87.8571429 L273.700472,87.8571429" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <path d="M2.14386792,166.428571 L2.14386792,236.428571" id="Line" stroke="#656565" stroke-width="3" stroke-linecap="square"></path>
+                <polygon id="Path-3" stroke="#000000" stroke-width="3" fill="#D4D4D4" points="51.7354199 39.1753961 51.7354199 164.480408 152.448473 164.480408 152.448473 39.1753961 109.327289 39.1753961 109.327289 81.8658065 63.5669045 81.8658065 63.5669045 39.1753961"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
