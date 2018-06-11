@@ -136,7 +136,8 @@ export default {
 		return {
 			title: `Floor 1`,
 			paintingClick: function(evt) {
-				let number = evt.target.id;
+			// paintingId will be send to the server
+				let paintingId = evt.target.id;
 
 				let button = document.querySelector('button');
 				button.classList.add('buttonAnimation');
@@ -181,7 +182,7 @@ main {
 		}
 	}
 	.buttonAnimation {
-		bottom: 10px;
+		bottom: 1em;
 		transition: bottom 0.6s ease-in;
 	}
 	#painting {
