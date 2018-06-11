@@ -3,7 +3,7 @@
         <h1>{{title}}</h1>
         <div class="map">
             <img src="/assets/floor1.svg" alt="floor 1">
-			<a href="#"><div class="circle"> 60 </div></a>
+			<a @click="paintingClick"><div class="circle"> 50 </div></a>
         </div>
         <button>Skip floor</button>
     </main>
@@ -14,6 +14,10 @@ export default {
 	data() {
 		return {
 			title: `Floor 1`,
+			paintingClick: function() {
+				let button = document.querySelector('button');
+				button.classList.add('buttonAnimation');
+			},
 		};
 	},
 };
@@ -34,17 +38,31 @@ main {
 	}
 	button {
 		position: fixed;
-		right: 4;
-		bottom: -30px;
+		right: 0;
+		margin: 0 1em 0em 0;
+		bottom: -4em;
 		background-color: black;
 		color: white;
-		padding: 0.5em 0.7em;
+		padding: 1em 1.7em;
 		border: none;
 		border-radius: 0.5em;
 	}
-	#buttonAnimation {
-		bottom: 3;
-		transition: bottom 2s ease-in;
+	.buttonAnimation {
+		bottom: 10px;
+		transition: bottom 0.6s ease-in;
+	}
+	a {
+		position: absolute;
+		color: white;
+		text-decoration: none;
+		right: 19%;
+		top: 49%;
+		.circle {
+			background-color: black;
+			border-radius: 6em;
+			padding: 0.5em;
+			width: auto;
+		}
 	}
 }
 </style>
