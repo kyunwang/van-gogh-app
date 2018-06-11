@@ -51,6 +51,7 @@ function response(app, req, res) {
 }
 
 server.use('/', express.static(path.resolve('../dist/')));
+server.use('/assets', express.static(path.resolve('./src/assets/')));
 
 server.get('*', (req, res) => {
 	if (isProduction) {
