@@ -126,7 +126,7 @@
     </g>
 </svg>
         </div>
-        <button><a class="bttn-skip" href="#">Skip floor</a></button>
+        <button><a class="btn-skip" href="#">Skip floor</a></button>
     </main>
 </template>
 
@@ -173,7 +173,7 @@ main {
 		border: none;
 		border-radius: 0.5em;
 		width: 10em;
-		.bttn-skip {
+		.btn-skip {
 			width: 50%;
 			padding-bottom: 1em;
 			text-decoration: none;
