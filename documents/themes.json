@@ -1,19 +1,64 @@
 {
 	[
-		"a different mind",
-		"conserving van gogh",
-		"in search of perfect light",
-		"japanese influences",
-		"painter friend",
-		"legacy of van gogh",
-		"the modern portrait",
-		"changing techniques",
-		"family of van gogh",
-		"simplicity",
-		"learning by doing",
-		"the wealth of nature",
-		"work as a medicine",
-		"color effects",
-		"driven and goal oriented"
+		{
+			"title": "Painter friends",
+			"imageUrl": "stoelVGauguin-min.png"
+		},
+		{
+			"title": "Japanse influences",
+			"imageUrl": "courtisane-min.png"
+		},
+		{
+			"title": "Legacy of Van Gogh",
+			"imageUrl": "deBlauweJapon-min.png"
+		},
+		{
+			"title": "Family Van Gogh",
+			"imageUrl": "portretTheo-min.png"
+		},
+		{
+			"title": "Learning by doing",
+			"imageUrl": "rodeKolenUi-min.png"
+		},
+		{
+			"title": "The modern portret",
+			"imageUrl": "grijzeVilthoed-min.png"
+		},
+		{
+			"title": "Changing techniques",
+			"imageUrl": "aardappeleters-min.png"
+		},
+		{
+			"title": "Simplicity",
+			"imageUrl": "zonnebloemen-min.png"
+		},
+		{
+			"title": "The wealth of nature",
+			"imageUrl": "korenveld-min.png"
+		},
+		{
+			"title": "Driven and goal oriented",
+			"imageUrl": "portretAlsSchilder-min.png"
+		},
+		{
+			"title": "Color effects",
+			"imageUrl": "zeegezichtSaintLeMer-min.png"
+		},
+		{
+			"title": "Work as a medicine",
+			"imageUrl": "tuinVanZiekenhuis-min.png"
+		},
+		{
+			"title": "In search of perfect light",
+			"imageUrl": "amandelbloesem-min.png"
+		},
+		{
+			"title": "Conserving Van Gogh",
+			"imageUrl": "zaaier-min.png"
+		},
+		{
+			"title": "A different Mind",
+			"imageUrl": "skeletSigaret-min.png"
+		}
 	]
 }

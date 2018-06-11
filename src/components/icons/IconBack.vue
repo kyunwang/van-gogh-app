@@ -1,10 +1,10 @@
 <template>
 	<svg
-		@click="watchStart"
+		@click="goBack"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 48 48"
-		width="48" 
-		height="48" 
+		width="48"
+		height="48"
 		aria-labelledby="back"
 		role="presentation"
 	>
@@ -18,10 +18,11 @@
 <script>
 	export default {
 		methods: {
-			watchStart() {
-				console.log('Start icon');
-				
-			}
+			goBack() {
+				if (this.$route.path !== '/') {
+					this.$router.go(-1);
+				}
+			},
 		}
-	}
+	};
 </script>

@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<p>{{ title }}</p>
-		<img src="http://lh3.googleusercontent.com/_6EVuASOt_-fs-_SZ7wUdFP3PS5nupTRnYJPvQqdIrds9D4PRS6n0ipSwGBP0duP4ue3HLzRNRbZThyntE01JS-ZK5E9Pz28vsJwGDFw6Js" alt="title">
+		<p>{{ theme.title }}</p>
+		<img :src="'/assets/images/' + theme.imageUrl" :alt="theme.title">
 	</div>
 </template>
 
 <script>
 	export default {
-		props: ['title'],
+		props: ['theme'],
 		data() {
 			return {};
 		}
@@ -17,8 +17,7 @@
 <style lang="scss" scoped>
 	div {
 		position: relative;
-		// height: 70%;
-		// width: 9rem;
+		height: 100%;
 	}
 
 	img {

@@ -1,8 +1,10 @@
 <template>
 	<header>
-		<router-link to="/" >
-			<icon-back></icon-back>
-		</router-link>
+		<!-- <router-link to="/" > -->
+			<!-- <button> -->
+				<icon-back></icon-back>
+			<!-- </button> -->
+		<!-- </router-link> -->
 	</header>
 </template>
 
@@ -17,17 +19,7 @@
 		data() {
 			return {};
 		},
-		methods: {
-			goBack() {
-				if (this.$route.path !== '/') {
-					console.log('Going back');
-					this.$router.go(-1);
-				}
-			},
-			checkRoute() {
-				console.log(this.$route);
-			}
-		}
+		methods: {}
 	};
 </script>
 
