@@ -17,14 +17,9 @@
 
 <script>
 	export default {
-		props: ['goBack'],
 		methods: {
-			watchStart() {
-				console.log('Start icon');
-			},
 			goBack() {
 				if (this.$route.path !== '/') {
-					console.log('Going back');
 					this.$router.go(-1);
 				}
 			},

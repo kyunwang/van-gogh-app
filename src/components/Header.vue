@@ -19,11 +19,7 @@
 		data() {
 			return {};
 		},
-		methods: {
-			checkRoute() {
-				// console.log(this.$route);
-			}
-		}
+		methods: {}
 	};
 </script>
 

@@ -47,7 +47,6 @@
 				</li>
 			</transition-group>
 
-			<!-- <router-link to="/selection-overview"> -->
 				<button
 					@click="confirmTour"
 					:disabled="isDisabled"
@@ -55,7 +54,6 @@
 				>
 					Complete
 				</button>
-			<!-- </router-link> -->
 		</footer>
 	</main>
 </template>
@@ -140,11 +138,9 @@
 		},
 		methods: {
 			addTheme(theme) {
-				// console.log('Add', evt.target, theme);
 				this.selectedThemes.push(theme);
 			},
 			removeTheme(theme, i) {
-				// setTimeout(() => this.selectedThemes.splice(i, 1), 1000)
 				this.selectedThemes.splice(i, 1);
 			},
 			confirmTour() {
@@ -162,7 +158,7 @@
 			console.log('created');
 		},
 		watch: {
-			// Wathc the $route propertie and run method change
+			// Watch the $route propertie and run method change
 			'selectedThemes': 'checkLength'
 		},
 	};
@@ -170,7 +166,6 @@
 
 <style lang="scss" scoped>
 	.disabled { 
-		// color: red;
 		background: gray;
 	}
 
@@ -191,7 +186,6 @@
 			bottom: 0;
 			background: #9C0E1C;
 		}
-		// border-bottom: .15rem solid #9C0E1C;
 
 		ul {
 			height: 3rem;
@@ -237,7 +231,7 @@
 		transition: all .3s;
 	}
 
-	.selected-item-enter, .selected-item-leave-to /* .list-leave-active below version 2.1.8 */ {
+	.selected-item-enter, .selected-item-leave-to {
 		opacity: 0;
 		transform: translateY(30px);
 	}
