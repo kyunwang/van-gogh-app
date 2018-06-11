@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from './views/Home.vue';
-import About from './views/About.vue';
+import Tourmap from './views/Tourmap.vue';
 import Selection from './views/Selection/index.vue';
 
 Vue.use(Router);
@@ -19,9 +19,9 @@ function createRouter() {
 				component: Home,
 			},
 			{
-				path: '/about',
-				name: 'about',
-				component: About,
+				path: '/tourmap',
+				name: 'Tourmap',
+				component: Tourmap,
 			},
 			{
 				path: '/selection',

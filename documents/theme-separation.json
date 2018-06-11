@@ -14,7 +14,7 @@
 		76, Sunflowers
 	],
 	"japanese influences": [
-		
+		100, Courtisana
 	],
 	"painter friend": [
 		12, Gauguin: van gogh paintin sunflowers
@@ -27,6 +27,7 @@
 		43, Saint-Rémy-de-provence
 		85, Paris
 		92, Auvers-sur-oise
+		101, schilderij van van Dongen
 
 	],
 	"the modern portrait": [
@@ -35,11 +36,13 @@
 	],
 	"changing techniques": [
 		9, Landscape at Twilight
+		50, The potato eaters
 
 	],
 	"family of van gogh": [
 		7, The van gogh's collector's cabinet
 		13, Still life with bible
+		102, Schilderij van theo
 	],
 	"simplicity": [
 		28, The cottage,
@@ -48,7 +51,7 @@
 	"learning by doing": [
 		16, Peasants heads
 		41, Head of a skeleton with a burning cigarette
-
+		76, Sunflowers
 	],
 	"the wealth of nature": [
 		2, The pink orchard
@@ -70,5 +73,6 @@
 	],
 	"driven and goal oriented": [
 		37, Rural life
+		14, Self-portrait with grey felt hat
 	],
 }
