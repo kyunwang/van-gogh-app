@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from './views/Home.vue';
-import About from './views/About.vue';
+import Tourmap from './views/Tourmap.vue';
 import Selection from './views/Selection/index.vue';
 // import SelectionOverview from './views/SelectionOverview/index.vue';
 
@@ -24,6 +24,12 @@ function createRouter() {
 				path: '/about',
 				name: 'about',
 				component: About,
+				meta: { title: '' },
+			},
+			{
+				path: '/tourmap',
+				name: 'Tourmap',
+				component: Tourmap,
 				meta: { title: '' },
 			},
 			{
