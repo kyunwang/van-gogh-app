@@ -18,7 +18,6 @@ export default {
 	},
 	data() {
 		return {
-			title: 'hello',
 		};
 	},
 };
@@ -38,6 +37,7 @@ export default {
 		&::before {
 			content: "";
 			height: 40%;
+			min-height: 14rem;
 			max-height: 16rem;
 			width: 100%;
 			position: absolute;
