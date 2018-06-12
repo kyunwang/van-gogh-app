@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Home from './views/Home.vue';
 import Tourmap from './views/Tourmap.vue';
+import Dashboard from './views/Dashboard/Dashboard.vue';
 import Selection from './views/Selection/index.vue';
 // import SelectionOverview from './views/SelectionOverview/index.vue';
 
@@ -31,6 +32,12 @@ function createRouter() {
 				name: 'selection',
 				component: Selection,
 				meta: { title: 'Create your Tour' },
+			},
+			{
+				path: '/dashboard',
+				name: 'dashboard',
+				component: Dashboard,
+				meta: { title: 'MMT Dashboard' },
 			},
 			// {
 			// 	path: '/selection-overview',
