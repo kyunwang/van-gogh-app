@@ -6,44 +6,175 @@
 		</nav>
 		<main>
 			<section>
-				<h2>Verdieping 0</h2>
+				<h2 id="verd0">Verdieping 0</h2>
 				<table>
 					<tr>
+						<th scope="col">#</th>
 						<th scope="col">Schilderij</th>
 						<th scope="col">Bezoekers</th>
-						<th scope="col">druk</th>
+						<th scope="col">druk</th> 
 					</tr>
-					<tr class='clickable-row' data-href='/painting-50'>
-						<td>#50 Aardappeleters</td>
-						<td>99</td>
-						<td>druk</td>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9" class="calm">rustig</router-link></td>
 					</tr>
 				</table>
 			</section>
 			<section>
-				<h2>Verdieping 1</h2>
-				<ul>
-					<li></li>
-				</ul>
+				<h2 id="verd1">Verdieping 1</h2>
+				<table>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Schilderij</th>
+						<th scope="col">Bezoekers</th>
+						<th scope="col">druk</th> 
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9" class="calm">rustig</router-link></td>
+					</tr>
+				</table>
 			</section>
 			<section>
-				<h2>Verdieping 2</h2>
-				<ul>
-					<li></li>
-				</ul>
+				<h2 id="verd2">Verdieping 2</h2>
+				<table>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Schilderij</th>
+						<th scope="col">Bezoekers</th>
+						<th scope="col">druk</th> 
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9" class="calm">rustig</router-link></td>
+					</tr>
+				</table>
 			</section>
 			<section>
-				<h2>Verdieping 3</h2>
-				<ul>
-					<li></li>
-				</ul>
+				<h2 id="verd3">Verdieping 3</h2>
+				<table>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Schilderij</th>
+						<th scope="col">Bezoekers</th>
+						<th scope="col">druk</th> 
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9">rustig</router-link></td>
+					</tr>
+					<tr class='clickable-row'>
+						<td id="painting-number"><router-link to="/painting-50">--</router-link></td> 
+						<td id="painting-name"><router-link to="/painting-50">schilderij</router-link></td> 
+						<td id="painting-visitors"><router-link to="/painting-9">99</router-link></td>
+						<td id="painting-busyness"><router-link to="/painting-9" class="calm">rustig</router-link></td>
+					</tr>
+				</table>
 			</section>
+			<div class="navigation">
+			<ul>
+				<li><a href="#verd3">Verdieping 3</a></li>
+				<li><a href="#verd2">Verdieping 2</a></li>
+				<li><a href="#verd1">Verdieping 1</a></li>
+				<li><a href="#verd0">Verdieping 0</a></li>
+			</ul>
+		</div>
 		</main>
 	</div>
 </template>
 
 <script>
+export default {
+	data() {
+		return {
+			title: 'Dashboard',
+		};
+	},
+};
 </script>
+
+<style lang="scss">
+body::before {
+	background: none;
+}
+header {
+	display: none;
+}
+</style>
 
 <style lang="scss" scoped>
 .dashboard--content {
@@ -61,6 +192,72 @@
 		}
 		h1 {
 			color: white;
+		}
+	}
+	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h2 {
+			margin-bottom: 2rem;
+		}
+		section {
+			width: 80%;
+			table {
+				border-collapse: collapse;
+				width: 80%;
+				tr:not(:first-child) {
+					border-bottom: 0.1rem solid black;
+				}
+				tr {
+					td,
+					th {
+						padding-right: 12rem;
+					}
+					th {
+						color: rgba(224, 90, 50, 1);
+						font-size: 0.8em;
+					}
+					td {
+						padding: 1rem 0rem;
+						.busy {
+							color: red;
+						}
+						.fair {
+							color: orange;
+						}
+						.calm {
+							color: green;
+						}
+
+						a {
+							text-decoration: none;
+							color: black;
+							padding: 1rem 0rem;
+						}
+					}
+				}
+			}
+		}
+		.navigation {
+			position: fixed;
+			right: 0;
+			transform: translateY(-29vh) rotate(-90deg);
+			transform-origin: 90% 0%;
+			ul {
+				display: flex;
+				flex-direction: row;
+				padding: 0 1rem;
+				list-style: none;
+				li {
+					padding: 0 1em;
+					a {
+						text-decoration: none;
+						color: rgba(224, 90, 50, 1);
+					}
+				}
+			}
 		}
 	}
 }
