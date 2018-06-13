@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Home from './views/Apptour/Home.vue';
 import Tourmap from './views/Apptour/Tourmap.vue';
 import Dashboard from './views/Dashboard/Dashboard.vue';
+import Floor1 from './views/Dashboard/Floor1.vue';
 import Selection from './views/Apptour/Selection/index.vue';
 // import SelectionOverview from './views/SelectionOverview/index.vue';
 
@@ -37,6 +38,12 @@ function createRouter() {
 				path: '/dashboard',
 				name: 'dashboard',
 				component: Dashboard,
+				meta: { title: 'MMT Dashboard' },
+			},
+			{
+				path: '/dashboard/floor-1',
+				name: 'floor-1',
+				component: Floor1,
 				meta: { title: 'MMT Dashboard' },
 			},
 			// {
