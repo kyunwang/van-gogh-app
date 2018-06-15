@@ -15,7 +15,7 @@ const exampleTourComplete = [
 		origins: 'Vincent van Gogh (1853 - 1890), Nuenen, april-mei 1885',
 		description:
 			'Van Gogh zag De aardappeleters als een meesterproef. Hij koos een moeilijke compositie om te bewijzen dat hij op weg was een goede figuurschilder te worden. Het schilderij moest de realiteit van het harde boerenleven verbeelden.',
-		visited: true,
+		// visited: true,
 		theme: 'changing techniques',
 		audio: [
 			{
@@ -37,7 +37,7 @@ const exampleTourComplete = [
 		origins: 'Vincent van Gogh (1853 - 1890), Antwerpen, januari-"februari" 1886',
 		description:
 			'Dit skelet met een brandende sigaret is een studentikoze grap. Van Gogh schilderde het in de tijd dat hij lessen volgde aan de Antwerpse kunstacademie, begin 1886. Het schilderij laat zien dat hij de anatomie goed beheerste.',
-		visited: false,
+		// visited: false,
 		theme: 'a different mind',
 		audio: [
 			{
@@ -59,7 +59,7 @@ const exampleTourComplete = [
 		origins: 'Vincent van Gogh (1853 - 1890), Parijs, september-oktober 1887',
 		description:
 			'Van Gogh schilderde dit zelfportret in de winter van 1887-1888, toen hij al bijna twee jaar in Parijs woonde. Het werk laat zien dat hij de stippeltechniek van de pointillisten had bestudeerd en op zijn eigen, originsele manier toepaste. De streepjes verf zijn in verschillende richtingen geplaatst. Ze volgen de omtrek van zijn hoofd en vormen zo een soort aureool.',
-		visited: false,
+		// visited: false,
 		theme: 'the modern portrait',
 		audio: [
 			{
@@ -76,7 +76,7 @@ const exampleTourComplete = [
 		floor: 1,
 		origins: 'Square Saint Pierre 1887',
 		description: 'A painting about the square in Saint pierre',
-		visited: false,
+		// visited: false,
 		theme: 'color effects',
 		audio: [
 			{
@@ -93,7 +93,7 @@ const exampleTourComplete = [
 		floor: 1,
 		origins: 'De roze boomgaard 1888',
 		description: 'A Painting about the tree garden',
-		visited: false,
+		// visited: false,
 		theme: 'the wealth of nature',
 		audio: [
 			{
@@ -110,7 +110,7 @@ const exampleTourComplete = [
 		floor: 1,
 		origins: 'sunflowers 1889',
 		description: 'The famous sunflower painting of van Gogh ',
-		visited: true,
+		// visited: true,
 		theme: 'in search of perfect light',
 		audio: [
 			{
@@ -127,7 +127,7 @@ const exampleTourComplete = [
 		floor: 1,
 		origins: 'The street 1888',
 		description: 'The yellow house where van Gogh lived for a while',
-		visited: true,
+		// visited: true,
 		theme: 'color effects',
 		audio: [
 			{
@@ -152,7 +152,7 @@ const exampleTourComplete = [
 		floor: 1,
 		origins: '1888',
 		description: 'The chair Gaugain always sat on.',
-		visited: true,
+		// visited: true,
 		theme: 'painter friend',
 		audio: [
 			{
@@ -169,8 +169,8 @@ const exampleTourComplete = [
 
 router.post('/tour-select', async (req, res) => {
 	const tour = new Tour({
-		deviceid: 'sha12u3812',
-		startTime: Date.now(),
+		device_id: 'sha12u3812',
+		start_tour_time: getCurrentDate(),
 		tour: exampleTourComplete,
 	});
 
@@ -199,8 +199,36 @@ router.put('/exit-audio', async (req, res) => {
 	Tour.update(
 		{ _id: tourId, 'tour.painting_no': paintingId },
 		{
-			current_way_point: paintingId,
+			current_way_point: 0, // 0 means walking or somewhere else
 			$set: { 'tour.$.end_time': getCurrentDate() },
+		}
+	).then(tour => {
+		res.send(tour);
+	});
+});
+
+router.put('/stop-tour', async (req, res) => {
+	const { tourId } = req.body;
+
+	Tour.update(
+		{ _id: tourId },
+		{
+			cancelled: true,
+			end_tour_time: getCurrentDate(),
+		}
+	).then(tour => {
+		res.send(tour);
+	});
+});
+
+router.put('/complete-tour', async (req, res) => {
+	const { tourId } = req.body;
+
+	Tour.update(
+		{ _id: tourId },
+		{
+			completed: true,
+			end_tour_time: getCurrentDate(),
 		}
 	).then(tour => {
 		res.send(tour);
