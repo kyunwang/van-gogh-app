@@ -13,7 +13,7 @@
 </template>
 
 <script>
-	import HttpService from '../../../../services/http-service.js';
+	import { sendPosition } from '../../../../services/http-service.js';
 
 	export default {
 		props: ['audio', 'tourId'],
@@ -22,7 +22,9 @@
 		},
 		methods: {
 			playAudio() {
-				HttpService.sendPosition(this.tourId, this.$route.params.id);
+				const paintingId = this.$route.params.id;
+				this.$store.state.tour.current_way_point = paintingId;
+				sendPosition(this.tourId, paintingId);
 			}
 		}
 	};

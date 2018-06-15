@@ -1,6 +1,5 @@
 <template>
 	<main>
-		<h1>{{ this.$route.meta.title }}</h1>
 		<section>
 			<h2>List of first half</h2>
 
@@ -62,7 +61,7 @@
 	import SelectItem from './SelectItem.vue';
 	import SelectedItem from './SelectedItem.vue';
 
-	import HttpService from '../../../../services/http-service';
+	import { tourSelect } from '../../../../services/http-service';
 
 	export default {
 		components: {
@@ -148,7 +147,7 @@
 			confirmTour() {
 				const selected = this.selectedThemes.map(theme => theme.title);
 
-				HttpService.tourSelect(selected).then(res => {
+				tourSelect(selected).then(res => {
 					// res is the generated tour
 					// Call the 'setTour' action
 					this.$store.dispatch('addTour', res);

@@ -1,6 +1,5 @@
 <template>
 	<main>
-    	<h1>{{ title }}</h1>
 		<section class="vanGoghMain">
 			<div class='text-image'>
 				<router-link to="/selection"><img src="/assets/images/zeegezichtSaintLeMer-min.png" alt="sea sight painting of Saint Le Mer">
@@ -46,9 +45,7 @@
 <script>
 export default {
 	data() {
-		return {
-			title: 'Home page',
-		};
+		return {};
 	},
 };
 </script>
