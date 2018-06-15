@@ -36,6 +36,30 @@ const HttpService = {
 			body: data,
 		});
 	},
+
+	cancelTour(tourId) {
+		const data = `tourId=${tourId}`;
+
+		return fetch('/api/stop-tour', {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			body: data,
+		});
+	},
+
+	completeTour(tourId) {
+		const data = `tourId=${tourId}`;
+
+		return fetch('/api/complete-tour', {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			body: data,
+		});
+	},
 };
 
 module.exports = HttpService;

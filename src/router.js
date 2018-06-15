@@ -53,7 +53,7 @@ function createRouter() {
 				component: AudioScreen,
 				meta: {
 					title: 'More about the painting',
-					returnPath: 'audio-screen',
+					returnPath: '/tourmap',
 					returnLabel: '',
 				},
 			},
