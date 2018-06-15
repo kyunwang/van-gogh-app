@@ -13,6 +13,8 @@
 <script>
 	import IconBack from './icons/IconBack.vue';
 
+	import { cancelTour } from '../../services/http-service.js';
+
 	export default {
 		props: [],
 		components: {
@@ -27,8 +29,14 @@
 		watch: {
 			$route (to, from) {
 				this.returnPath = this.$route.meta.returnPath;
+				const isCompleted = this.$store.state.tour.completed;
+
+				if (from.path === '/tourmap' && to.path === '/' && isCompleted === false) {
+					cancelTour(this.$store.state.tour._id);
+				}
+				
 			}
-		}
+		},
 	};
 </script>
 
