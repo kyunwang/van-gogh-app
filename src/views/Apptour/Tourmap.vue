@@ -158,23 +158,38 @@
 					</g>
 				</svg>
         </div>
-        <button><a class="btn-skip" href="#">Skip floor</a></button>
+        <button
+		  		v-if="tourStarted"
+				@click="finishTour"
+			>
+				<a
+					class="btn-skip"
+					href="#">
+					Finish tour
+				</a>
+			</button>
     </main>
 </template>
 
 <script>
+import { completeTour } from '../../../services/http-service';
+
 export default {
 	data() {
 		return {
 			title: 'Floor 1',
+			tourStarted: Number
 		};
 	},
 	methods: {
+		finishTour() {
+			this.$store.state.tour.completed = true;
+			completeTour(this.$store.state.tour._id);
+			this.$router.push('/');
+		},
 		paintingClick(evt) {
-			const button = document.querySelector('button');
-			button.classList.add('buttonAnimation');
-
-			// this.$router.push('/audio-screen');
+			// const button = document.querySelector('button');
+			// button.classList.add('buttonAnimation');
 		},
 		displayTour() {
 			const points = document.querySelectorAll('.painting-point');
@@ -198,9 +213,10 @@ export default {
 		},
 	},
 	mounted() {
+		this.tourStarted = !!this.$store.state.tour.current_way_point; // default is 0 meaning false
 		// Display all the tour items when the view is mounted
 		this.displayTour();
-	},
+	}
 };
 </script>
 
@@ -224,13 +240,16 @@ main {
 		position: fixed;
 		right: 0;
 		margin: 0 1em 0em 0;
-		bottom: -4em;
+		// bottom: -4em;
+		// bottom: 1em;
+		bottom: 1em;
 		background-color: black;
 		color: white;
 		padding: 1em 1.7em;
 		border: none;
 		border-radius: 0.5em;
 		width: 10em;
+
 		.btn-skip {
 			width: 50%;
 			padding-bottom: 1em;
@@ -238,10 +257,11 @@ main {
 			color: white;
 		}
 	}
+
 	.buttonAnimation {
-		bottom: 1em;
-		transition: bottom 0.6s ease-in;
+		// transition: bottom 0.6s ease-in;
 	}
+
 	.painting-point {
 		display: none;
 		&.active {
