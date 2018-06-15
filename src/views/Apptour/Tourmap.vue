@@ -188,8 +188,6 @@ export default {
 			this.$router.push('/');
 		},
 		paintingClick(evt) {
-			// const button = document.querySelector('button');
-			// button.classList.add('buttonAnimation');
 		},
 		displayTour() {
 			const points = document.querySelectorAll('.painting-point');
@@ -225,41 +223,35 @@ export default {
 	pointer-events: none;
 }
 main {
-	margin: 0 0.8em;
+	margin: 0 0.8rem;
 
 	h1 {
-		color: white;
+		color: #fff;
 	}
 	.map {
 		width: 100%;
 		svg {
-			width: 22em;
+			width: 22rem;
 		}
 	}
 	button {
 		position: fixed;
 		right: 0;
-		margin: 0 1em 0em 0;
-		// bottom: -4em;
-		// bottom: 1em;
-		bottom: 1em;
+		margin: 0 1rem 0rem 0;
+		bottom: 1rem;
 		background-color: black;
-		color: white;
-		padding: 1em 1.7em;
+		color: #fff;
+		padding: 1rem 1.7rem;
 		border: none;
-		border-radius: 0.5em;
-		width: 10em;
+		border-radius: 0.5rem;
+		width: 10rem;
 
 		.btn-skip {
 			width: 50%;
-			padding-bottom: 1em;
+			padding-bottom: 1rem;
 			text-decoration: none;
 			color: white;
 		}
-	}
-
-	.buttonAnimation {
-		// transition: bottom 0.6s ease-in;
 	}
 
 	.painting-point {
