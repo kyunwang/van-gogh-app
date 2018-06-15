@@ -1,6 +1,5 @@
 <template>
 	<main>
-		<h1>{{ this.$route.meta.title }}</h1>
 		<section>
 			<h2>List of first half</h2>
 

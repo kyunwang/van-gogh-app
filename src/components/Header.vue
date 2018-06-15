@@ -1,10 +1,12 @@
 <template>
 	<header>
-		<!-- <router-link to="/" > -->
-			<!-- <button> -->
-				<icon-back></icon-back>
-			<!-- </button> -->
-		<!-- </router-link> -->
+		<router-link
+			:to="returnPath"
+			v-if="returnPath"
+		>
+			<icon-back></icon-back>
+		</router-link>
+		<h1>{{ this.$route.meta.title }}</h1>
 	</header>
 </template>
 
@@ -17,9 +19,16 @@
 			IconBack
 		},
 		data() {
-			return {};
+			return {
+				returnPath: this.$route.meta.returnPath
+			};
 		},
-		methods: {}
+		methods: {},
+		watch: {
+			$route (to, from) {
+				this.returnPath = this.$route.meta.returnPath;
+			}
+		}
 	};
 </script>
 

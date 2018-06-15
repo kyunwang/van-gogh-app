@@ -1,6 +1,5 @@
 <template>
 	<main>
-		<h1>audio screen</h1>
 		<!-- <p>{{ tour[0]}}</p> -->
 		<ul v-if="tour">
 			<li
@@ -29,7 +28,6 @@
 			};
 		},
 		beforeMount() {
-			console.log(this);
 			this.tour = this.$store.state.tour.tour.filter(item => item.painting_no === this.paintingNum);
 		},
 		beforeDestroy() {
