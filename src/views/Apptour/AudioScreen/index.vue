@@ -1,6 +1,5 @@
 <template>
 	<main>
-		<!-- <p>{{ tour[0]}}</p> -->
 		<ul v-if="tour">
 			<li
 				v-for="(audio, index) in tour[0].audio"

@@ -22,7 +22,9 @@
 		},
 		methods: {
 			playAudio() {
-				sendPosition(this.tourId, this.$route.params.id);
+				const paintingId = this.$route.params.id;
+				this.$store.state.tour.current_way_point = paintingId;
+				sendPosition(this.tourId, paintingId);
 			}
 		}
 	};
