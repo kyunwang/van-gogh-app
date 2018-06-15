@@ -15,6 +15,7 @@
 
 <script>
 	import AudioItem from './AudioItem.vue';
+	import { exitAudio } from '../../../../services/http-service';
 
 	export default {
 		components: {
@@ -23,12 +24,17 @@
 		data() {
 			return {
 				tour: Object,
-				tourId: Number
+				tourId: this.$store.state.tour._id,
+				paintingNum: this.$route.params.id
 			};
 		},
 		beforeMount() {
-			this.tourId = this.$store.state.tour._id;
-			this.tour = this.$store.state.tour.tour.filter(item => item.painting_no === this.$route.params.id);
+			console.log(this);
+			this.tour = this.$store.state.tour.tour.filter(item => item.painting_no === this.paintingNum);
+		},
+		beforeDestroy() {
+			// This method is called before the component exits
+			exitAudio(this.tourId, this.paintingNum);
 		}
 	};
 </script>

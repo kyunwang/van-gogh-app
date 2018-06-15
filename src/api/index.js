@@ -193,4 +193,18 @@ router.put('/get-position', async (req, res) => {
 	});
 });
 
+router.put('/exit-audio', async (req, res) => {
+	const { tourId, paintingId } = req.body;
+
+	Tour.update(
+		{ _id: tourId, 'tour.painting_no': paintingId },
+		{
+			current_way_point: paintingId,
+			$set: { 'tour.$.end_time': getCurrentDate() },
+		}
+	).then(tour => {
+		res.send(tour);
+	});
+});
+
 module.exports = router;
