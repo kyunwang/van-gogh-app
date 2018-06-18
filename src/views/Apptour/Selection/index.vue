@@ -151,9 +151,9 @@
 					// res is the generated tour
 					// Call the 'setTour' action
 					this.$store.dispatch('addTour', res);
-					this.$store.dispatch('connectSocket');
-					this.$router.push('/tourmap');
-				});
+					this.$store.dispatch('connectSocket', io());
+					this.$store.state.socket.emit('startTour', res);
+				}).then(() => this.$router.push('/tourmap'));
 			},
 			checkLength() {
 				if (this.selectedThemes.length > 0) {

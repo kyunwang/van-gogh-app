@@ -13,22 +13,6 @@ export default {
 	components: {
 		Header,
 	},
-	data() {
-		return {
-			connectSocket: this.$store.state.socketConnected,
-		};
-	},
-	methods: {
-		startSocket() {
-			if (this.connectSocket) {
-
-			}
-		},
-	},
-	mounted() {},
-	watch: {
-		'connectSocket': 'startSocket'
-	}
 };
 </script>
 
@@ -36,7 +20,7 @@ export default {
 <style lang="scss">
 	html, body {
 		position: relative;
-		font-family: "varela round", "arial rounded", "arial", sans-serif;
+		font-family: "monteserrat", "arial", sans-serif;
 		margin: 0;
 		// background :#9C0E1C;
 		// color: #f3f3f3;
@@ -57,6 +41,6 @@ export default {
 	}
 
 	h1 {
-		color: #fff;
+		color: #f3f3f3;
 	}
 </style>
