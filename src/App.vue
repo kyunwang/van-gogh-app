@@ -14,8 +14,21 @@ export default {
 		Header,
 	},
 	data() {
-		return {};
+		return {
+			connectSocket: this.$store.state.socketConnected,
+		};
 	},
+	methods: {
+		startSocket() {
+			if (this.connectSocket) {
+
+			}
+		},
+	},
+	mounted() {},
+	watch: {
+		'connectSocket': 'startSocket'
+	}
 };
 </script>
 

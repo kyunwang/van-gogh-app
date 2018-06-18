@@ -33,6 +33,7 @@
 
 				if (from.path === '/tourmap' && to.path === '/' && isCompleted === false) {
 					cancelTour(this.$store.state.tour._id);
+					this.$store.dispatch('disconnectSocket');
 				}
 				
 			}
