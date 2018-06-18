@@ -15,13 +15,15 @@ export default {
 	},
 	data() {
 		return {
-			connectSocket: this.$store.state.connectSocket,
+			connectSocket: this.$store.state.socketConnected,
 		};
 	},
 	methods: {
 		startSocket() {
-			console.log('Start');
-		}
+			if (this.connectSocket) {
+
+			}
+		},
 	},
 	mounted() {},
 	watch: {
