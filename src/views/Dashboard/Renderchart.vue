@@ -6,13 +6,13 @@ export default {
 	data() {
 		return {
 			data: [0, 0, 0, 0, 1, 2, 0],
+			gradient: null,
 		};
 	},
 	methods: {
 		manipulation() {
 			setTimeout(function() {
 				console.log(this);
-
 				this.data.pop();
 			}, 1000);
 		},
@@ -23,17 +23,26 @@ export default {
 					datasets: [
 						{
 							label: 'Data One',
-							backgroundColor: 'rgba(224, 90, 50, 1.000)',
+							borderColor: '#FC2525',
+							pointBackgroundColor: 'white',
+							borderWidth: 1,
+							pointBorderColor: 'white',
+							backgroundColor: this.gradient,
 							data: this.data,
 						},
 					],
 				},
-				{ responsive: true, maintainAspectRatio: false }
+				{ responsive: false, maintainAspectRatio: false }
 			);
 			this.manipulation();
 		},
 	},
 	mounted() {
+		this.gradient = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 0, 450);
+
+		this.gradient.addColorStop(0, 'rgba(255, 0,0, 0.5)');
+		this.gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.25)');
+		this.gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
 		this.renderLineChart();
 	},
 };

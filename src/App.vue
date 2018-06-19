@@ -18,6 +18,7 @@ export default {
 
 
 <style lang="scss">
+
 	html, body {
 		position: relative;
 		font-family: "monteserrat", "arial", sans-serif;
@@ -39,6 +40,7 @@ export default {
 		}
 	}
 
+
 	main {
 		z-index: +1;
 	}
@@ -54,4 +56,5 @@ export default {
 	h4 {
 		margin: 1rem 0;
 	}
+
 </style>
