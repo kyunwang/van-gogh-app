@@ -1,48 +1,93 @@
 <template>
-	<form
-		method="POST"
-		action='/api/tour-select'
-	>
-		<transition-group
-			tag="section"
-			name="selected-item"
-			appear
+	<div>
+		<form
+			v-if="noJavascript"
+			method="POST"
+			action="/api/tour-select"
 		>
-			<select-item
-				v-for='(theme, i) in themes'
-				v-if="!selectedThemes.includes(theme)"
-				:key="theme + i"
-				:theme="theme"
-				:itemStyle="{
-					backgroundImage: 'url(/assets/images/' + theme.imageUrl + ')'
-				}"
-				:onSelect="addTheme"
-			/>
-		</transition-group>
-
-		<footer>
 			<transition-group
-				tag="ul"
+				tag="section"
 				name="selected-item"
 				appear
 			>
-				<li
-					v-for="(theme, i) in selectedThemes"
-					:key="i"
-					@click="removeTheme(theme, i, $event)"
-				>
-					<selected-item :theme="theme" />
-				</li>
+				<select-item
+					v-for='(theme, i) in themes'
+					v-if="!selectedThemes.includes(theme)"
+					:key="theme + i"
+					:theme="theme"
+					:itemStyle="{
+						backgroundImage: 'url(/assets/images/' + theme.imageUrl + ')'
+					}"
+					:onSelect="addTheme"
+				/>
 			</transition-group>
 
-			<vue-button
-				:onClick="confirmTour"
-				:isDisabled="isDisabled"
-				:btnText="'Complete'"
-				:btnType="'submit'"
-			/>
-		</footer>
-	</form>
+			<footer>
+				<transition-group
+					tag="ul"
+					name="selected-item"
+					appear
+				>
+					<li
+						v-for="(theme, i) in selectedThemes"
+						:key="i"
+						@click="removeTheme(theme, i, $event)"
+					>
+						<selected-item :theme="theme" />
+					</li>
+				</transition-group>
+
+				<vue-button
+					:onClick="confirmTour"
+					:isDisabled="isDisabled"
+					:btnText="'Complete'"
+					:btnType="'submit'"
+				/>
+			</footer>
+		</form>
+
+		<main v-else>
+			<transition-group
+				tag="section"
+				name="selected-item"
+				appear
+			>
+				<select-item
+					v-for='(theme, i) in themes'
+					v-if="!selectedThemes.includes(theme)"
+					:key="theme + i"
+					:theme="theme"
+					:itemStyle="{
+						backgroundImage: 'url(/assets/images/' + theme.imageUrl + ')'
+					}"
+					:onSelect="addTheme"
+				/>
+			</transition-group>
+
+			<footer>
+				<transition-group
+					tag="ul"
+					name="selected-item"
+					appear
+				>
+					<li
+						v-for="(theme, i) in selectedThemes"
+						:key="i"
+						@click="removeTheme(theme, i, $event)"
+					>
+						<selected-item :theme="theme" />
+					</li>
+				</transition-group>
+
+				<vue-button
+					:onClick="confirmTour"
+					:isDisabled="isDisabled"
+					:btnText="'Complete'"
+					:btnType="'submit'"
+				/>
+			</footer>
+		</main>
+	</div>
 </template>
 
 <script>
@@ -56,7 +101,7 @@
 		components: {
 			SelectItem,
 			SelectedItem,
-			VueButton
+			VueButton,
 		},
 		props: [],
 		data() {
@@ -140,6 +185,7 @@
 				],
 				selectedThemes: [],
 				isDisabled: false,
+				noJavascript: true
 			};
 		},
 		methods: {
@@ -161,7 +207,7 @@
 					this.$store.dispatch('connectSocket', io());
 					this.$store.state.socket.emit('startTour', res);
 				}).then(() => {
-					this.$router.push('/tourmap')
+					this.$router.push('/tour-map');
 				});
 			},
 			checkLength() {
@@ -175,6 +221,7 @@
 		beforeMount() {
 			// If there is javascript we can set the button to disabled
 			this.isDisabled = true;
+			this.noJavascript = false;
 		},
 		watch: {
 			// Watch the $route propertie and run method change
