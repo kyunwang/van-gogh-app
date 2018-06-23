@@ -10,6 +10,7 @@ function sockets(io) {
 		socket.on('exitAudio', exitAudio);
 		socket.on('cancelTour', cancelTour);
 		socket.on('completeTour', completeTour);
+		socket.on('Dashboard', sendDashboard);
 
 		// ==========================
 		// === Socket (helper)function
@@ -18,6 +19,12 @@ function sockets(io) {
 		// TO initialize the data to the dashboard only
 		function startTour(tourData) {
 			socket.emit('startTour', tourData);
+		}
+
+		function sendDashboard(newTest) {
+			console.log('Join Dashboard');
+			
+			socket.join('Dashboard');
 		}
 
 		function sendPosition(tourId, paintingId, locatedFloor) {
@@ -47,7 +54,7 @@ function sockets(io) {
 					$set: { 'tour.$.end_time': getCurrentDate() },
 				}
 			).then(tour => {
-				socket.emit('exitAudio', tour);
+				io.to('Dashboard').emit('exitAudio', tour);
 			});
 		}
 
