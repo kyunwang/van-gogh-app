@@ -54,13 +54,8 @@ export default {
     components: { LineChart },
     data () {
       return {
-<<<<<<< HEAD
-		  	labels:['10:00', '11:00'],
-			floorZeroData: [0,1],
-=======
 		  	labels:['09:00', '09:15'],
 			floorZeroData: [0, 1],
->>>>>>> 100be7ba0683e9a2b5b38466d954bb2dbd6d8ea8
 			floorOneData: [1, 12],
 			floorTwoData: [2, 5],
 			floorThreeData: [2, 5],
