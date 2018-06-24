@@ -49,19 +49,19 @@ import LineChart from '../../components/Charts/LineChart.vue';
 
 export default {
     name: 'Dashboard',
-    components: {LineChart},
+    components: { LineChart },
     data () {
       return {
-		  labels:["10:00", "11:00"],
-		floorZeroData: [0,1],
-		floorOneData: [1, 12],
-		floorTwoData: [2, 5],
-		floorThreeData: [2, 5],
-		floorZeroChart: null,
-		floorOneChart: null,
-		floorTwoChart: null,
-		floorThreeChart: null,
-		socket: null
+		  	labels:['10:00', '11:00'],
+			floorZeroData: [0,1],
+			floorOneData: [1, 12],
+			floorTwoData: [2, 5],
+			floorThreeData: [2, 5],
+			floorZeroChart: null,
+			floorOneChart: null,
+			floorTwoChart: null,
+			floorThreeChart: null,
+			socket: null
       }
     },
     created () {
