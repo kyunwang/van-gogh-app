@@ -10,6 +10,7 @@ const state = {
 	tour: {},
 	socketConnected: false,
 	socket: false,
+	selectedThemes: [],
 };
 
 function createStore() {
