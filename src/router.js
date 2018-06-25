@@ -36,7 +36,7 @@ function createRouter() {
 				meta: {
 					title: 'My Tour',
 					returnPath: '/',
-					returnLabel: 'Cancel tour',
+					returnLabel: 'Cancel',
 				},
 			},
 			{
@@ -46,7 +46,7 @@ function createRouter() {
 				meta: {
 					title: 'Create your Tour',
 					returnPath: '/',
-					returnLabel: 'To overview',
+					returnLabel: 'Overview',
 				},
 			},
 			{
@@ -56,7 +56,7 @@ function createRouter() {
 				meta: {
 					title: 'Your Themes',
 					returnPath: '/tour-select',
-					returnLabel: 'To selection',
+					returnLabel: 'Select',
 				},
 			},
 			{
@@ -66,7 +66,7 @@ function createRouter() {
 				meta: {
 					title: 'More about the painting',
 					returnPath: '/tour-map',
-					returnLabel: 'To map',
+					returnLabel: 'Map',
 				},
 			},
 			{
