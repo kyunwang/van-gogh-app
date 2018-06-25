@@ -95,8 +95,6 @@
 	import SelectedItem from './SelectedItem.vue';
 	import VueButton from '../../../components/Button.vue';
 
-	import { tourSelect } from '../../../../services/http-service';
-
 	export default {
 		components: {
 			SelectItem,
@@ -199,17 +197,9 @@
 			confirmTour(evt) {
 				evt.preventDefault();
 				const selected = this.selectedThemes.map(theme => theme.title);
+				this.$store.dispatch('selectThemes', selected);
 
-				tourSelect(selected).then(res => {
-					// res is the generated tour
-					// Call the 'setTour' action
-					this.$store.dispatch('addTour', res);
-					this.$store.dispatch('connectSocket', io());
-					
-					this.$store.state.socket.emit('startTour', res);
-				}).then(() => {
-					this.$router.push('/tour-map');
-				});
+				this.$router.push('/tour-overview');
 			},
 			checkLength() {
 				if (this.selectedThemes.length > 1) {

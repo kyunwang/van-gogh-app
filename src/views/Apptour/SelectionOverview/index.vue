@@ -6,8 +6,22 @@
 </template>
 
 <script>
-	export default {
+	import { tourSelect } from '../../../../services/http-service';
 
+	export default {
+		methods: {
+			confirmTour() {
+				// tourSelect(selected).then(res => {
+				// 	// res is the generated tour
+				// 	this.$store.dispatch('addTour', res);
+				// 	this.$store.dispatch('connectSocket', io());
+					
+				// 	this.$store.state.socket.emit('startTour', res);
+				// }).then(() => {
+				// 	this.$router.push('/tour-map');
+				// });
+			}
+		}
 	};
 </script>
 
