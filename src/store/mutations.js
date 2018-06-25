@@ -12,7 +12,7 @@ const mutations = {
 		state.socketConnected = false;
 	},
 	[types.ADD_THEME_SELECTION](state, themes_payload) {
-		state.selectedThemes = theme_payload;
+		state.selectedThemes = themes_payload;
 	},
 };
 
