@@ -16,7 +16,7 @@
 		</ul>
 
 		<vue-button
-			class="test"
+			class="btn-confirm"
 			:onClick="confirmTour"
 			:btnText="'Start Tour'"
 			:btnType="'submit'"
@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.test {
+	.btn-confirm {
 		position: fixed;
 		bottom: 0;
 		right: 0;
