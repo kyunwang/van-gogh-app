@@ -6,32 +6,32 @@
 		<main>
 			<div class="navigation">
 				<ul>
-					<li>
-						<a class="verd0" href="/dashboard/verdieping-0">
+					<li class="floor0">
+						<a  href="/dashboard/floor-0">
 							<div>
 								<h3>Floor 0</h3>
 								<line-chart :chartData="floorZeroChart" :width="400" :height="200" />
 							</div>
 						</a>
 					</li>
-					<li>
-						<a class="verd1" href="/dashboard/verdieping-1">
+					<li class="floor1">
+						<a  href="/dashboard/floor-1">
 							<div>
 								<h3>Floor 1</h3>
 								<line-chart :chartData="floorOneChart" :width="400" :height="200" />
 							</div>
 						</a>
 					</li>
-					<li>
-						<a class="verd2" href="/dashboard/verdieping-2">
+					<li class="floor2">
+						<a href="/dashboard/floor-2">
 							<div>
 								<h3>Floor 2</h3>
 								<line-chart :chartData="floorTwoChart" :width="400" :height="200" />
 							</div>
 						</a>
 					</li>
-					<li>
-						<a class="verd3" href="/dashboard/verdieping-3">
+					<li class="floor3">
+						<a  href="/dashboard/floor-3">
 							<div>
 								<h3>Floor 3</h3>
 								<line-chart :chartData="floorThreeChart" :width="400" :height="200" />
@@ -177,6 +177,7 @@ header {
 
 <style lang="scss" scoped>
 .dashboard--content {
+	background-color:black;
 	nav {
 		display: flex;
 		flex-direction: row;
@@ -184,83 +185,58 @@ header {
 		align-items: center;
 		padding: 0 2rem;
 		background-color: rgba(0, 0, 0, 1);
-
-		#search {
-			height: 2rem;
-			border-radius: 0.8rem;
-			border: none;
-		}
 		h1 {
 			color: white;
 		}
 	}
-	main {
-		display: flex;
-		flex-direction: column;
-		h2 {
-			margin-bottom: 3rem;
+	main { 
+		background-color: black;
+		@media screen and (min-width: 40em) {
+			height: 100vh;
+			width: 100vw;
 		}
-		section {
-			width: 100%;
-			margin: 3rem 0 4rem 2rem;
-			table {
-				border-collapse: collapse;
-				width: 50%;
-				tr:not(:first-child) {
-					border-bottom: 0.1rem solid black;
-				}
-				tr {
-					th {
-						color: rgba(224, 90, 50, 1);
-						font-size: 0.8em;
-					}
-					td {
-						padding: 1rem 0rem;
-						text-align: center;
-						.busy {
-							color: red;
-						}
-						.fair {
-							color: orange;
-						}
-						.calm {
-							color: green;
-						}
-					}
-				}
-			}
-		}
-		.button-floor {
-			background-color: black;
-			color: white;
-			border-radius: 0.8rem;
-			padding: 0.5rem 1rem;
-			border: none;
-			margin-left: 2rem;
+		// Desktop
+		@media screen and (min-width: 70em) {
+			height: 100vh;
+			width: 100vw;
 		}
 	}
 	.navigation {
-		position: absolute;
-		right: 0;
 		ul {
 			display: flex;
-			flex-direction: column;
+			flex-flow: row wrap;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
 			margin: 0;
+			padding: 0;
 			list-style: none;
+			@media screen and (min-width: 70em) {
+				width: 75%;
+				margin: 2em;
+				align-self: center;
+			}
 			li {
+				margin: 2em 2em;
 				a {
 					text-decoration: none;
-					color: black;
 					padding: 1rem 0rem;
 					div {
 						padding: 0.5em;
-						background-color: black;
+						background-color: #454545;
+						border-radius: 1rem;
+						max-width:86vw;
 						h3 {
 							color: white;
 						}
 					}
 				}
 			}
+			.floor0 { order: 1;}
+			.floor1 { order: 2;}
+			.floor2 { order: 3;}
+			.floor3 { order: 4;}
 		}
 	}
 }
