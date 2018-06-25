@@ -6,6 +6,7 @@ Van Gogh Multi-media Tour and Dashboard is a tour personalising and analytics so
 # Table of Content
 - [Getting started](#getting-started)
 - [Goal of the prototype](#goal-of-the-prototype)
+- [Benefits of the prototype](#benefits-of-the-prototype)
 - [Features](#features)
 	- [App features](#app-features)
 	- [Dashboard features](#dashboard-features)
@@ -53,7 +54,11 @@ If you want to work on this project, follow these steps:
 1. Happy coding!
 
 # Goal of the Prototype
-The goal of the application is to serve as a concept to verify whether thi way of getting insight about the visitors of the museum works or not. This will serve as a possible steppingstone/milestone for the Van Gogh Museum.
+The goal of the application is to serve as a concept to verify whether this way of getting insight about the visitors of the museum works or not. This will serve as a possible steppingstone/milestone for the Van Gogh Museum.
+
+# Benefits of the Prototype
+To improve the experience of the visit by getting insight with the collected data
+With the insights visitors can be redirected to less congested areas, paintings can be relocated strategecally as well as security. In short Van Gogh can improve the visitors experience by utilizing the collected data.
 
 # Features
 The following are the features of the App and Dashboar side from the prototype.
