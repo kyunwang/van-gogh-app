@@ -16,7 +16,7 @@
 					:key="theme + i"
 					:theme="theme"
 					:itemStyle="{
-						backgroundImage: 'url(/assets/images/' + theme.imageUrl + ')'
+						backgroundImage: `url(/assets/images/${theme.imageUrl}')`
 					}"
 					:onSelect="addTheme"
 				/>
@@ -58,7 +58,7 @@
 					:key="theme + i"
 					:theme="theme"
 					:itemStyle="{
-						backgroundImage: 'url(/assets/images/' + theme.imageUrl + ')'
+						backgroundImage: `url(/assets/images/${theme.imageUrl}')`
 					}"
 					:onSelect="addTheme"
 				/>
