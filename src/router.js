@@ -10,6 +10,8 @@ import AudioScreen from './views/Apptour/AudioScreen/index.vue';
 import Dashboard from './views/Dashboard/Dashboard.vue';
 import Floor1 from './views/Dashboard/Floor1.vue';
 import Floor0 from './views/Dashboard/Floor0.vue';
+import PaintingDetails from './views/Dashboard/PaintingDetails.vue'
+// import SelectionOverview from './views/SelectionOverview/index.vue';
 
 Vue.use(Router);
 
@@ -99,6 +101,22 @@ function createRouter() {
 					returnLabel: '',
 				},
 			},
+			{
+				path: '/dashboard/floor-1/:id',
+				name: 'floor-1',
+				component: PaintingDetails,
+				meta: {
+					title: 'MMT Dashboard',
+					returnPath: '',
+					returnLabel: '',
+				},
+			},
+			// {
+			// 	path: '/selection-overview',
+			// 	name: 'selection overview',
+			// 	component: SelectionOverview,
+			// 	meta: { title: 'This is your Tour' },
+			// },
 		],
 	});
 }
