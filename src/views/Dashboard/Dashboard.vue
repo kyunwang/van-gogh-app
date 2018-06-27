@@ -55,7 +55,7 @@ export default {
     data () {
       return {
 		  	labels:['09:00', '09:15'],
-			floorZeroData: [0, 1],
+			floorZeroData: [0, 6],
 			floorOneData: [1, 12],
 			floorTwoData: [2, 5],
 			floorThreeData: [2, 5],
@@ -63,6 +63,10 @@ export default {
 			floorOneChart: null,
 			floorTwoChart: null,
 			floorThreeChart: null,
+			gradient: null,
+			gradient2: null,
+			gradient3: null,
+			gradient4: null,
 			socket: null
       }
     },
@@ -82,16 +86,32 @@ export default {
 
 		// Create a set interval
 		this.dataInterval = createInterval(1000, this.tourInterval);
+
+				// gradient color 1
+		this.gradient = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 0, 450);
+
+		this.gradient.addColorStop(0, 'rgba(255, 0,0, 0.5)');
+		this.gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.25)');
+		this.gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
+
+		// gradient color 2
+		this.gradient2 = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 0, 450);
+
+		this.gradient2.addColorStop(0, 'rgb(65, 184, 131, 0.1)');
+		this.gradient2.addColorStop(0.5, 'rgb(65, 184, 131, 0.5)');
+		this.gradient2.addColorStop(1, 'rgb(65, 184, 131, 0.25)');
     },
     methods: {
       fillData () {
 		  this.floorZeroChart = {
-			labels: ['10:00', '12:00'],
+			labels: this.label,
 				datasets: [
 					{
 						label: 'people',
-						backgroundColor: '#f87979',
-						data: this.floorZeroData
+						pointBorderColor: 'white',
+						borderColor: '#f89842',
+						backgroundColor: this.gradient,
+						data: this.floorZeroData,
 					},
 				]
 			},
@@ -100,28 +120,34 @@ export default {
 				datasets: [
 					{
 						label: 'people',
-						backgroundColor: '#f87979',
+						pointBorderColor: 'white',
+						borderColor: '#f87979',
+						backgroundColor: this.gradient2,
 						data: this.floorOneData
 					},
 				]
 			},
 			this.floorTwoChart = {
-				labels: ['10:00', '12:00'],
+				labels: this.label,
 				datasets: [
 					{
 						label: 'people',
-						backgroundColor: '#f87979',
+						pointBorderColor: 'white',
+						borderColor: '#acd696',
+						backgroundColor: this.gradient3,
 						data: this.floorTwoData
 					},
 				]
 			}
 			this.floorThreeChart = {
-				labels: ['10:00', '12:00'],
+				labels: this.label,
 				datasets: [
 					{
 						label: 'people',
-						backgroundColor: '#f87979',
-						data: this.floorThreeData
+						pointBorderColor: 'white',
+						borderColor: '#00abdf',
+						backgroundColor: this.gradient4,
+						data: this.floorThreeData,
 					},
 				]
 			}
@@ -162,7 +188,7 @@ export default {
 			}
 			this.fillData();
 		}
-    }
+	},
   };
   </script>
   

@@ -61,7 +61,7 @@ export default {
     data () {
       return {
 		  	labels:['09:00', '09:15'],
-			floorZeroData: [0, 1],
+			floorZeroData: [0, 6],
 			floorOneData: [1, 12],
 			floorTwoData: [2, 5],
 			floorThreeData: [2, 5],

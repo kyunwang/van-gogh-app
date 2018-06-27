@@ -15,7 +15,7 @@ export default {
 					yAxes: [
 						{
 							ticks: {
-								beginAtZero: true,
+								fontColor: "white",
 							},
 							gridLines: {
 								display: true,
@@ -27,11 +27,14 @@ export default {
 							gridLines: {
 								display: false,
 							},
+							ticks:{
+								fontColor: "white",
+							}
 						},
 					],
 				},
 				legend: {
-					display: true,
+					display: false,
 				},
 				responsive: true,
 				maintainAspectRatio: false,

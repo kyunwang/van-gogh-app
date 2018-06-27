@@ -5,7 +5,8 @@
 		</nav>
 	<main>	
 		<section class="linechart">
-			<h2>Floor 1</h2>
+			<h2>Floor 1 <span>Every visitor on this floor</span></h2>
+			
 			<line-chart></line-chart>
 			<h2>Devices</h2>
 			<ul>
@@ -20,7 +21,6 @@
 			</ul>
 		</section>
 		<section class="overview-navigation">
-
 			<div v-for="(item, index) in images" :key="index" v-if="paintingNum == item.number">
 				<h3>Meta</h3>
 				<LazyImage
@@ -28,7 +28,6 @@
 					:alt="item.description"
 				/>
 			</div>
-			<h1 v-else>{{images.number}}</h1>
 		</section>
 	</main>
 </div>
@@ -180,7 +179,6 @@ body::before {
 			background-color: #464646;
 			border-radius: 1rem;
 			margin-bottom: 2em;
-			
 			padding: 1em;
 				@media screen and (min-width: 40em){
 					width: 60vw;
@@ -188,7 +186,14 @@ body::before {
 				}
 			h1,h2 {
 				color: white;
+				span {
+					font-size: .5em;
+					font-style: italic;
+					color: white;
+					margin-bottom: .4em;
+				}
 			}
+			
 			ul {
 				display:flex;
 				flex-direction: row;
