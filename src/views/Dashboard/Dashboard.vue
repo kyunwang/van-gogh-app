@@ -2,12 +2,11 @@
 	<div class="dashboard--content">
 		<nav>
 			<h1>Multi Media Tour Dashboard</h1>
-			<div>
-				<button><a href="/dashboard/floor-0" disabled="true">Floor 0</a></button>
-				<button><a href="/dashboard/floor-1">Floor 1</a></button>
-				<button><a href="/dashboard/floor-2" disabled="true">Floor 2</a></button>
-				<button><a href="/dashboard/floor-3" disabled="true">Floor 3</a></button>
-			</div>
+			<ul>
+				<li><router-link to="/dashboard">Floors</router-link></li>
+				<li><router-link to="/dashboard/paintinglist">Paintings</router-link></li>
+				<li><router-link to="/dashboard/devicelist">Devices</router-link></li>
+			</ul>
 		</nav>
 		<main>
 			<div class="navigation">
@@ -56,11 +55,11 @@ import LineChart from '../../components/Charts/LineChart.vue';
 import { generateFakeTime, createInterval, generateNumber } from '../../../services/helpers.js';
 
 export default {
-    name: 'Dashboard',
-    components: { LineChart },
-    data () {
-      return {
-		  	labels:['09:00', '09:15'],
+	name: 'Dashboard',
+	components: { LineChart },
+	data() {
+		return {
+			labels: ['09:00', '09:15'],
 			floorZeroData: [2, 4],
 			floorOneData: [1, 12],
 			floorTwoData: [9, 5],
@@ -73,14 +72,14 @@ export default {
 			gradient2: null,
 			gradient3: null,
 			gradient4: null,
-			socket: null
-      }
-    },
-    created () {
+			socket: null,
+		};
+	},
+	created() {
 		this.fillData();
 	},
-    mounted () {
-		 // Create an socket instance for dashboard
+	mounted() {
+		// Create an socket instance for dashboard
 		this.socket = io();
 		this.socket.emit('Dashboard');
 
@@ -93,7 +92,7 @@ export default {
 		// Create a set interval
 		this.dataInterval = createInterval(1000, this.tourInterval);
 
-				// gradient color 1
+		// gradient color 1
 		this.gradient = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 0, 450);
 
 		this.gradient.addColorStop(0, 'rgba(255, 0,0, 0.5)');
@@ -106,11 +105,11 @@ export default {
 		this.gradient2.addColorStop(0, 'rgb(65, 184, 131, 0.1)');
 		this.gradient2.addColorStop(0.5, 'rgb(65, 184, 131, 0.5)');
 		this.gradient2.addColorStop(1, 'rgb(65, 184, 131, 0.25)');
-    },
-    methods: {
-      fillData () {
-		  this.floorZeroChart = {
-			labels: this.labels,
+	},
+	methods: {
+		fillData() {
+			(this.floorZeroChart = {
+				labels: this.labels,
 				datasets: [
 					{
 						label: 'people',
@@ -120,31 +119,31 @@ export default {
 						data: this.floorZeroData,
 					},
 				],
-			},
-		  this.floorOneChart = {
-			labels: this.labels,
-				datasets: [
-					{
-						label: 'people',
-						pointBorderColor: 'white',
-						borderColor: '#f87979',
-						backgroundColor: this.gradient2,
-						data: this.floorOneData
-					},
-				],
-			},
-			this.floorTwoChart = {
-				labels: this.labels,
-				datasets: [
-					{
-						label: 'people',
-						pointBorderColor: 'white',
-						borderColor: '#acd696',
-						backgroundColor: this.gradient3,
-						data: this.floorTwoData
-					},
-				],
-			}
+			}),
+				(this.floorOneChart = {
+					labels: this.labels,
+					datasets: [
+						{
+							label: 'people',
+							pointBorderColor: 'white',
+							borderColor: '#f87979',
+							backgroundColor: this.gradient2,
+							data: this.floorOneData,
+						},
+					],
+				}),
+				(this.floorTwoChart = {
+					labels: this.labels,
+					datasets: [
+						{
+							label: 'people',
+							pointBorderColor: 'white',
+							borderColor: '#acd696',
+							backgroundColor: this.gradient3,
+							data: this.floorTwoData,
+						},
+					],
+				});
 			this.floorThreeChart = {
 				labels: this.labels,
 				datasets: [
@@ -156,9 +155,9 @@ export default {
 						data: this.floorThreeData,
 					},
 				],
-			}
-      },
-      fetchData () {},
+			};
+		},
+		fetchData() {},
 		startTour(tourData, counter) {
 			this.updateTourData(tourData, counter);
 		},
@@ -168,10 +167,8 @@ export default {
 		completeTour(tourData, counter) {
 			this.updateTourData(tourData, counter);
 		},
-		sendPosition(tourData, counter) {
-		},
-		exitAudio(tourData, counter) {
-		},
+		sendPosition(tourData, counter) {},
+		exitAudio(tourData, counter) {},
 		updateTourData(tourData, counter) {
 			this.floorOneData.push(counter);
 		},
@@ -182,7 +179,9 @@ export default {
 			if (labelsLength !== floorZeroLength) {
 				this.floorZeroData.push(generateNumber(this.floorZeroData[this.floorZeroData.length - 1]));
 				this.floorTwoData.push(generateNumber(this.floorTwoData[this.floorTwoData.length - 1]));
-				this.floorThreeData.push(generateNumber(this.floorThreeData[this.floorThreeData.length - 1]));
+				this.floorThreeData.push(
+					generateNumber(this.floorThreeData[this.floorThreeData.length - 1])
+				);
 			}
 
 			if (labelsLength === 8) {
@@ -213,10 +212,10 @@ export default {
 			}
 
 			this.fillData();
-		}
+		},
 	},
-  };
-  </script>
+};
+</script>
   
 <style lang="scss">
 body::before {
@@ -229,7 +228,7 @@ body::before {
 
 <style lang="scss" scoped>
 .dashboard--content {
-	background-color:black;
+	background-color: black;
 	overflow: scroll;
 	padding: 2em;
 	nav {
@@ -242,19 +241,26 @@ body::before {
 		h1 {
 			color: white;
 		}
-		div {
-			button {
-				background-color: #454545;
+		ul {
+			display: flex;
+			flex-direction: row;
+			li {
 				border: none;
+				padding: 1em 2em;
+				margin-right: 0.5em;
 				a {
+					background-color: #454545;
 					text-decoration: none;
 					color: white;
 					padding: 1em 2em;
+					&.router-link-active {
+						background-color: #f0b0b1 !important;
+					}
 				}
 			}
 		}
 	}
-	main { 
+	main {
 		background-color: black;
 		@media screen and (min-width: 40em) {
 			height: 100vh;
@@ -290,34 +296,42 @@ body::before {
 						padding: 1.5em;
 						background-color: #454545;
 						border-radius: 1rem;
-						max-width:86vw;
+						max-width: 86vw;
 						h3 {
 							color: white;
-							padding-left: .7em;
+							padding-left: 0.7em;
 						}
-					&:hover, &:focus {
-						background-color: #7c7c7c;
-						div {
-							background-color:#7c7c7c;
+						&:hover,
+						&:focus {
+							background-color: #7c7c7c;
+							div {
+								background-color: #7c7c7c;
+							}
 						}
-					}
-
 					}
 					&:focus {
-							background-color: #7c7c7c;
+						background-color: #7c7c7c;
 						div {
-							background-color:#7c7c7c;
+							background-color: #7c7c7c;
 							div {
-							background-color:#7c7c7c;
+								background-color: #7c7c7c;
 							}
 						}
 					}
 				}
 			}
-			.floor0 { order: 1;}
-			.floor1 { order: 2;}
-			.floor2 { order: 3;}
-			.floor3 { order: 4;}
+			.floor0 {
+				order: 1;
+			}
+			.floor1 {
+				order: 2;
+			}
+			.floor2 {
+				order: 3;
+			}
+			.floor3 {
+				order: 4;
+			}
 		}
 	}
 }
