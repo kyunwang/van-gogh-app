@@ -183,7 +183,7 @@ body::before {
 			
 			padding: 1em;
 				@media screen and (min-width: 40em){
-					width: 100%;
+					width: 60vw;
 					margin-right: 2em;
 				}
 			h1,h2 {
