@@ -258,4 +258,10 @@ router.get('/painting-devices/:paintingId', async (req, res) => {
 	});
 });
 
+router.get('/devices', (req, res) => {
+	Tour.find({}).then(tours => {
+		res.send(tours);
+	});
+});
+
 module.exports = router;

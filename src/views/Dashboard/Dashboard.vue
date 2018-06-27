@@ -1,13 +1,6 @@
 <template>
 	<div class="dashboard--content">
-		<nav>
-			<h1>Multi Media Tour Dashboard</h1>
-			<ul>
-				<li><router-link to="/dashboard">Floors</router-link></li>
-				<li><router-link to="/dashboard/paintinglist">Paintings</router-link></li>
-				<li><router-link to="/dashboard/devicelist">Devices</router-link></li>
-			</ul>
-		</nav>
+		<nav-dash></nav-dash>
 		<main>
 			<div class="navigation">
 				<ul>
@@ -51,12 +44,13 @@
 
 <script>
 import LineChart from '../../components/Charts/LineChart.vue';
+import NavDash from '../../components/Navdash.vue';
 
 import { generateFakeTime, createInterval, generateNumber } from '../../../services/helpers.js';
 
 export default {
 	name: 'Dashboard',
-	components: { LineChart },
+	components: { LineChart, NavDash },
 	data() {
 		return {
 			labels: ['09:00', '09:15'],

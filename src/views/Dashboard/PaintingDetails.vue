@@ -1,8 +1,7 @@
 <template>
 <div class="dashboard-painting">
-		<nav>
-			<h1>MMT Dashboard</h1>
-		</nav>
+		<nav-dash>
+		</nav-dash>
 	<main>	
 		<section class="linechart">
 			<h2>painting {{paintingNum}} <span>Every visitor on this floor</span></h2>
@@ -41,6 +40,7 @@
 <script>
 import { getAllDevicesAt } from '../../../services/http-service.js';
 import LineChart from '../../components/Charts/LineChart.vue';
+import NavDash from '../../components/Navdash.vue';
 import LazyImage from '../../components/LazyImage.vue';
 import { generateFakeTime, createInterval, getTime } from '../../../services/helpers.js';
 
@@ -48,6 +48,7 @@ export default {
 	components: {
 		LineChart,
 		LazyImage,
+		NavDash,
 	},
 	props: ['src', 'alt'],
 	data() {

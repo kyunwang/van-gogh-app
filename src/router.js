@@ -13,6 +13,7 @@ import Floor0 from './views/Dashboard/Floor0.vue';
 import UserTour from './views/Dashboard/UserTour/index.vue';
 import PaintingDetails from './views/Dashboard/PaintingDetails.vue';
 import Paintinglist from './views/Dashboard/Paintinglist.vue';
+import Devicelist from './views/Dashboard/Devicelist.vue';
 
 Vue.use(Router);
 
@@ -124,8 +125,18 @@ function createRouter() {
 			},
 			{
 				path: '/dashboard/paintinglist',
-				name: 'Painting list',
+				name: 'Paintinglist',
 				component: Paintinglist,
+				meta: {
+					title: 'MMT Dashboard',
+					returnPath: '',
+					returnLabel: '',
+				},
+			},
+			{
+				path: '/dashboard/devicelist',
+				name: 'Devicelist',
+				component: Devicelist,
 				meta: {
 					title: 'MMT Dashboard',
 					returnPath: '',

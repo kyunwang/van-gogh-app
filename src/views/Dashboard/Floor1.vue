@@ -1,8 +1,7 @@
 <template>
 <div class="dashboard-floor">
-		<nav>
-			<h1>MMT Dashboard</h1>
-		</nav>
+		<nav-dash>
+		</nav-dash>
 	<main>	
 		<section class="linechart">
 			<h2>Floor 1 <span>Every visitor who is present on this floor</span></h2>
@@ -53,11 +52,12 @@
 <script>
 import LineChart from '../../components/Charts/LineChart.vue';
 import LazyImage from '../../components/LazyImage.vue';
+import NavDash from '../../components/Navdash.vue';
 import { generateFakeTime, createInterval, generateNumber } from '../../../services/helpers.js';
 
 export default {
 	name: 'Dashboard',
-	components: { LineChart, LazyImage },
+	components: { LineChart, LazyImage, NavDash },
 	data() {
 		return {
 			labels: ['09:00', '09:15'],

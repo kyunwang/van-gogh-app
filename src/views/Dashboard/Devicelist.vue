@@ -1,17 +1,39 @@
 <template>
-    <div class="dashboard-paintinglist">
-        <nav-dash>
-        </nav-dash>
+    <div class="dashboard-devicelist">
+        <nav-dash></nav-dash>
+        <main>
+            <section class="devicelist">
+                <ul>
+                    <li v-for="item in devicelist">
+                        <a href="#">{{item._id}}</a>
+                    </li>
+                </ul>
+            </section>
+        </main>
     </div>
-    
 </template>
 
 <script>
 import NavDash from '../../components/Navdash.vue';
+import { getDevices } from '../../../services/http-service';
 export default {
 	components: { NavDash },
+	data() {
+		return {
+			name: 'devicelist',
+			devicelist: {},
+		};
+	},
+	mounted() {
+		getDevices()
+			.then(res => res.json())
+			.then(json => {
+				this.devicelist = json;
+			});
+	},
 };
 </script>
+
 
 <style lang="scss">
 body::before {
@@ -24,7 +46,7 @@ body::before {
 
 
 <style lang="scss" scoped>
-.dashboard-paintinglist {
+.dashboard-devicelist {
 	background-color: black;
 	height: 100vh;
 	nav {
@@ -42,7 +64,7 @@ body::before {
 			flex-direction: row;
 			justify-content: space-between;
 		}
-		.linechart {
+		.devicelist {
 			background-color: #464646;
 			border-radius: 1rem;
 			margin-bottom: 2em;
@@ -108,4 +130,5 @@ body::before {
 	}
 }
 </style>
+
 
