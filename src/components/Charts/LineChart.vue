@@ -15,15 +15,11 @@ export default {
 					yAxes: [
 						{
 							ticks: {
-<<<<<<< HEAD
-								fontColor: "white",
-=======
 								beginAtZero: true,
 								stepSize: 2,
 								suggestedMin: 0,
 								suggestedMax: 16,
 								maxTicksLimit: 6
->>>>>>> ae5056a7f7776557b92e4b241d4ade4596570478
 							},
 							gridLines: {
 								display: true,
