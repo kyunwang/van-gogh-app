@@ -73,6 +73,7 @@ body::before {
 			background-color: #464646;
 			border-radius: 1rem;
 			padding: 1em;
+			margin: 1em;
 			height: auto;
 			@media screen and (min-width: 40em) {
 				width: 60vw;
@@ -153,21 +154,7 @@ body::before {
 		}
 	}
 }
-.backtotop {
-	background-color: black;
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	margin: 1em;
-	padding: 1em;
-	border-radius: 1rem;
-	a {
-		color: white;
-		font-size: 2em;
-		text-decoration: none;
-		
-	}
-}
+
 </style>
 
 
