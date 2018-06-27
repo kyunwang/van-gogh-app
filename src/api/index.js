@@ -247,13 +247,15 @@ router.get('/device-detail/:deviceId', async (req, res) => {
 
 	Tour.findOne({ device_id: deviceId }).then(tour => {
 		res.send(tour);
+		
 	});
 });
 
 router.get('/painting-devices/:paintingId', async (req, res) => {
 	const { paintingId } = req.params;
-
+	
 	Tour.find({ 'tour.painting_no': paintingId }).then(tour => {
+		
 		res.send(tour);
 	});
 });

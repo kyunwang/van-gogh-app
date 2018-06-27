@@ -7,13 +7,13 @@
 	>
 		<h2>{{ audio.title }}</h2>
 
-		<!-- <audio
+		<audio
 			controls
 			v-if="noJavascript"
 		>
 			<source :src="`/assets/audio/${audio.audio_url}`" type="audio/wav">
 			Your browser does not support the audio element and has javascript turned of
-		</audio> -->
+		</audio>
 
 		<button
 			@click="((isAudioPlaying === false) || isPlaying) && (isPlaying ? pauseAudio() : playAudio(audio.audio_url))"
@@ -58,19 +58,19 @@ export default {
 			if (sound) {
 				console.log(111);
 
-				// const audioUrl = `/assets/audio/${sound}`;
-				// this.audioFile = new Audio(audioUrl);
-				// this.audioFile.play();
+				const audioUrl = `/assets/audio/${sound}`;
+				this.audioFile = new Audio(audioUrl);
+				this.audioFile.play();
 
 				this.isPlaying = true;
 				// Send to parent
-				// this.togglePlayState(true);
+				this.togglePlayState(true);
 				this.getPosition();
 			}
 		},
 		pauseAudio() {
 			if (this.audioFile && this.isPlaying === true) {
-				// this.audioFile.pause();
+				this.audioFile.pause();
 
 				this.isPlaying = false;
 				// Send to parent
