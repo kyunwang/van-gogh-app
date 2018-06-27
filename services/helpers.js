@@ -4,6 +4,15 @@ exports.getCurrentDate = function() {
 	return date.toUTCString();
 };
 
+exports.formatDate = function(data) {
+	const date = new Date(data);
+	const year = date.getFullYear();
+	const month = date.getMonth();
+	const day = date.getDay();
+
+	return `${day}-${month}-${year}`;
+};
+
 exports.getTime = function(data) {
 	if (!data) {
 		return '-';
@@ -51,7 +60,25 @@ exports.generateFakeTime = function(currentTime) {
 		hours = `0${hours}`;
 	}
 
+	if (hours === 24) {
+		hours = '00';
+	}
+
 	return `${hours}:${minutes}`;
+};
+
+exports.generateNumber = function(number) {
+	const random = Math.random();
+	// console.log(random);
+
+	if (random < 0.5) {
+		if (number <= 1) {
+			return number + 1;
+		}
+		return number - 1;
+	} else {
+		return number + 1;
+	}
 };
 
 exports.createInterval = function(intervalTime, callback) {
