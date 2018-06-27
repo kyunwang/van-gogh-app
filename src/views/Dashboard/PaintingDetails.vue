@@ -42,7 +42,7 @@
 import { getAllDevicesAt } from '../../../services/http-service.js';
 import LineChart from '../../components/Charts/LineChart.vue';
 import LazyImage from '../../components/LazyImage.vue';
-import { generateFakeTime, createInterval } from '../../../services/helpers.js';
+import { generateFakeTime, createInterval, getTime } from '../../../services/helpers.js';
 
 export default {
 	components: {
@@ -54,8 +54,8 @@ export default {
 		return {
 			paintingNum: this.$route.params.id,
 			paintingChart: null,
-			labels: ['09:00', '09:15'],
-			paintingData: [2, 0],
+			labels: [getTime(new Date(), true)],
+			paintingData: [0],
 			allDevices: [],
 			socket: null,
 			images: [
@@ -167,7 +167,7 @@ export default {
 		this.socket.emit('Dashboard');
 		this.socket.on('sendPosition', this.sendPosition);
 
-		this.dataInterval = createInterval(2000, this.tourInterval);
+		this.dataInterval = createInterval(5000, this.tourInterval);
 	},
 	methods: {
 		fillData() {
@@ -190,8 +190,9 @@ export default {
 			this.paintingData.push(count);
 		},
 		generateNewLabel() {
-			const lastLabel = this.labels[this.labels.length - 1];
-			const newLabel = generateFakeTime(lastLabel);
+			// const lastLabel = this.labels[this.labels.length - 1];
+			// const newLabel = generateFakeTime(lastLabel);
+			const newLabel = getTime(new Date(), true);
 			this.labels.push(newLabel);
 		},
 		tourInterval() {
