@@ -12,28 +12,47 @@
 <style lang="scss" scoped>
 nav {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 1em;
 	background-color: rgba(0, 0, 0, 1);
+	@media screen and (min-width: 40rem) {
+		display: flex;
+		flex-direction: row;
+	}
 	h1 {
 		color: white;
 	}
 	ul {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 0;
+
+		@media screen and (min-width: 40em) {
+			display: flex;	
+			flex-direction: row;	
+		}
 		li {
 			border: none;
-			padding: 1em 2em;
-			margin-right: 0.5em;
+			padding: 1.5em 1em;
 			a {
 				background-color: #454545;
 				text-decoration: none;
 				color: white;
 				padding: 1em 2em;
+				max-width: 2em;
 				&.router-link-exact-active {
-					background-color: #f0b0b1 !important;
+					color: white;
+					border-bottom: white solid 4px;
+				}
+				&:focus {
+							background-color: white;
+							color: black;
+							transition: all .5s ease-in;
+							border-radius: 1rem;
 				}
 			}
 		}

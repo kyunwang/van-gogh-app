@@ -1,11 +1,15 @@
 <template>
     <div class="dashboard-devicelist">
         <nav-dash></nav-dash>
-        <main>
+        <main id="back-to-top">
             <section class="devicelist">
+				<h2>Floor 1 <span>all devices on this floor right now</span></h2>
+				<p>This page shows you all active roaming user devices on this floor right now</p>
                 <ul>
                     <li v-for="item in devicelist">
-                        <a href="#">{{item._id}}</a>
+						<router-link :to="`/dashboard/user/${item.device_id}`">
+							{{ item.device_id.substr(0, 4) }}
+						</router-link>
                     </li>
                 </ul>
             </section>
@@ -46,6 +50,7 @@ body::before {
 
 
 <style lang="scss" scoped>
+
 .dashboard-devicelist {
 	background-color: black;
 	height: 100vh;
@@ -67,11 +72,13 @@ body::before {
 		.devicelist {
 			background-color: #464646;
 			border-radius: 1rem;
-			margin-bottom: 2em;
 			padding: 1em;
+			height: auto;
 			@media screen and (min-width: 40em) {
 				width: 60vw;
 				margin-right: 2em;
+				margin-left: 2em;
+				margin-bottom: 2em;
 			}
 			h1,
 			h2 {
@@ -83,6 +90,11 @@ body::before {
 					margin-bottom: 0.4em;
 				}
 			}
+			p {
+				color: white;
+				font-weight: bolder;
+				padding-bottom: 1.1em;
+			}
 
 			ul {
 				display: flex;
@@ -90,11 +102,13 @@ body::before {
 				flex-wrap: wrap;
 				margin-right: 2em;
 				list-style: none;
-				overflow: scroll;
-				height: 10em;
+				@media screen and (min-width: 40em) {
+						margin-right: 1em;
+						margin-bottom: 1em;
+						height: 50vw;
+						overflow: scroll;
+					}
 				li {
-					background-color: black;
-					border-radius: 1rem;
 					margin-right: 0.3em;
 					margin-bottom: 0.5em;
 					@media screen and (min-width: 40em) {
@@ -103,9 +117,19 @@ body::before {
 					}
 					a {
 						display: block;
-						padding: 0.3em 2.5em;
+						background-color: black;
+						border-radius: 1rem;
+						padding: 1.5em 2.5em;
 						color: white;
+						text-decoration: none;
+						&:focus, &:hover {
+							background-color: white;
+							color: black;
+							transition: all .5s ease-in;
+							border-radius: 1rem;
+						}
 					}
+					
 				}
 			}
 		}
@@ -127,6 +151,21 @@ body::before {
 				}
 			}
 		}
+	}
+}
+.backtotop {
+	background-color: black;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	margin: 1em;
+	padding: 1em;
+	border-radius: 1rem;
+	a {
+		color: white;
+		font-size: 2em;
+		text-decoration: none;
+		
 	}
 }
 </style>
