@@ -5,7 +5,7 @@
 		</nav>
 	<main>	
 		<section class="linechart">
-			<h2>Floor 1</h2>
+			<h2>Floor 1 <span>Every visitor who is present on this floor</span></h2>
 			<line-chart :chartData="floorOneChart"></line-chart>
 			<h2>Paintings</h2>
 			<ul>

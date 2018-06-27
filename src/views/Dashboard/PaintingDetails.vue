@@ -5,7 +5,7 @@
 		</nav>
 	<main>	
 		<section class="linechart">
-			<h2>Floor 1 <span>Every visitor on this floor</span></h2>
+			<h2>painting {{paintingNum}} <span>Every visitor on this floor</span></h2>
 			
 			<line-chart></line-chart>
 			<h2>Devices</h2>
@@ -27,6 +27,11 @@
 					:src="'/assets/images/' + item.imageUrl"
 					:alt="item.description"
 				/>
+			</div>
+			<div>
+				<h3>Thema's</h3>
+				<p>Changing techniques</p>
+				<p>Color effects</p>
 			</div>
 		</section>
 	</main>
@@ -158,12 +163,11 @@ body::before {
 <style lang="scss" scoped>
     .dashboard-painting {
         background-color: black;
-        // width: 100vw;
-        height: 100%;
+        height: 100vh;
         nav {
-		margin: 0;
-        padding-left: 2em;
-        padding-top: 1em;
+			margin: 0;
+        	padding-left: 2em;
+        	padding-top: 1em;
 		h1 {
 			color: white;
 		}
@@ -200,6 +204,8 @@ body::before {
 				flex-wrap: wrap;
 				margin-right: 2em;
 				list-style: none;
+				overflow: scroll;
+				height: 10em;
 				li {
 					background-color: black;
 					border-radius: 1rem;
@@ -211,7 +217,7 @@ body::before {
 					}
 					a {
 						display: block;
-						padding: 1em 3em;
+						padding: 0.3em 2.5em;
 						color:white;
 					}
 				}
@@ -232,6 +238,9 @@ body::before {
 			    h3 {
                     color:white;
                 }
+				p {
+					color:white;
+				}
 		    }
 	    }
 	}

@@ -1,7 +1,13 @@
 <template>
 	<div class="dashboard--content">
 		<nav>
-			<h1>MMT Dashboard</h1>
+			<h1>Multi Media Tour Dashboard</h1>
+			<div>
+				<button><a href="/dashboard/floor-0" disabled="true">Floor 0</a></button>
+				<button><a href="/dashboard/floor-1">Floor 1</a></button>
+				<button><a href="/dashboard/floor-2" disabled="true">Floor 2</a></button>
+				<button><a href="/dashboard/floor-3" disabled="true">Floor 3</a></button>
+			</div>
 		</nav>
 		<main>
 			<div class="navigation">
@@ -204,6 +210,8 @@ body::before {
 <style lang="scss" scoped>
 .dashboard--content {
 	background-color:black;
+	overflow: scroll;
+	padding: 2em;
 	nav {
 		display: flex;
 		flex-direction: row;
@@ -213,6 +221,17 @@ body::before {
 		background-color: rgba(0, 0, 0, 1);
 		h1 {
 			color: white;
+		}
+		div {
+			button {
+				background-color: #454545;
+				border: none;
+				a {
+					text-decoration: none;
+					color: white;
+					padding: 1em 2em;
+				}
+			}
 		}
 	}
 	main { 
@@ -255,6 +274,22 @@ body::before {
 						h3 {
 							color: white;
 							padding-left: .7em;
+						}
+					&:hover, &:focus {
+						background-color: #7c7c7c;
+						div {
+							background-color:#7c7c7c;
+						}
+					}
+
+					}
+					&:focus {
+							background-color: #7c7c7c;
+						div {
+							background-color:#7c7c7c;
+							div {
+							background-color:#7c7c7c;
+							}
 						}
 					}
 				}
