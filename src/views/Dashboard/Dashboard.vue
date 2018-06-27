@@ -222,7 +222,7 @@ body::before {
 					text-decoration: none;
 					padding: 1rem 0rem;
 					div {
-						padding: 0.5em;
+						padding: 1.5em;
 						background-color: #454545;
 						border-radius: 1rem;
 						max-width:86vw;

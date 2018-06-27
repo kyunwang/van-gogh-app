@@ -20,13 +20,15 @@
 			</ul>
 		</section>
 		<section class="overview-navigation">
-			<div>
+
+			<div v-for="(item, index) in images" :key="index" v-if="paintingNum == item.number">
 				<h3>Meta</h3>
 				<LazyImage
-					:src="'/assets/images/' + images.imageUrl"
-					:alt="images.description"
+					:src="'/assets/images/' + item.imageUrl"
+					:alt="item.description"
 				/>
 			</div>
+			<h1 v-else>{{images.number}}</h1>
 		</section>
 	</main>
 </div>
@@ -101,7 +103,7 @@
 						'imageUrl': 'portretAlsSchilder-min.jpg'
 					},
 					{
-						'number': '2',
+						'number': '02',
 						'description': 'The theme. An image of the seascape new les saintes-maties-de-la-mer to depict the theme Color effects',
 						'imageUrl': 'pinkOrchard-min.jpg'
 					},
@@ -112,22 +114,22 @@
 					},
 					{
 						'number': '53',
-						'description': 'The theme. An image of almond blossoms to depict the theme In search of perfect light',
+						'description': 'The chair of Gauguin',
 						'imageUrl': 'stoelVGauguin-min.jpg'
 					},
 					{
 						'number': '37',
-						'description': 'The theme. An image of a sower to depict the theme Conserving Van Gogh',
+						'description': 'van Gogh painting of the seeder',
 						'imageUrl': 'zaaier-min.jpg'
 					},
 					{
-						'number': '4',
-						'description': 'The theme. An image of a skeleton who is smoking to depict the theme A different mind',
+						'number': '04',
+						'description': 'the yellow house where van Gogh stayed in',
 						'imageUrl': 'yellowhouse-min.jpg'
 					},
 					{
 						'number': '76',
-						'description': 'The theme. An image of a skeleton who is smoking to depict the theme A different mind',
+						'description': 'Famous sunflowerpainting',
 						'imageUrl': 'zonnebloemen-min.jpg'
 					}
 				]
@@ -198,7 +200,6 @@ body::before {
 					border-radius: 1rem;
 					margin-right: .3em;
 					margin-bottom: .5em;
-					// justify-content: space-around;
 					@media screen and (min-width: 40em){
 						margin-right: 1em;
 						margin-bottom: 1em;

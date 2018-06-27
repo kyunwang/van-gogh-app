@@ -10,7 +10,7 @@
 			<h2>Paintings</h2>
 			<ul>
 				<li v-for="(item,index) in images" :key="index" :style="{backgroundImage:`url(/assets/images/${item.imageUrl})`}">
-					<router-link :to="'floor-1/' + item.number">
+					<router-link :to="'/dashboard/floor-1/' + item.number">
 							{{item.number}}
 					</router-link>
 				</li>
@@ -122,7 +122,7 @@ export default {
 						'imageUrl': 'portretAlsSchilder-min.jpg'
 					},
 					{
-						'number': '2',
+						'number': '02',
 						'description': 'The theme. An image of the seascape new les saintes-maties-de-la-mer to depict the theme Color effects',
 						'imageUrl': 'pinkOrchard-min.jpg'
 					},
@@ -142,7 +142,7 @@ export default {
 						'imageUrl': 'zaaier-min.jpg'
 					},
 					{
-						'number': '4',
+						'number': '04',
 						'description': 'The theme. An image of a skeleton who is smoking to depict the theme A different mind',
 						'imageUrl': 'yellowhouse-min.jpg'
 					},
