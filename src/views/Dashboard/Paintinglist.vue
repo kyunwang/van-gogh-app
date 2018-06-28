@@ -2,14 +2,123 @@
     <div class="dashboard-paintinglist">
         <nav-dash>
         </nav-dash>
-    </div>
-    
+		<main>
+    <section class="linechart">
+			<h2>Floor 1 <span>Every painting on every floor</span></h2>
+			<ul>
+				<li v-for="(item,index) in images" :key="index" :style="{backgroundImage:`url(/assets/images/${item.imageUrl})`}">
+					<router-link :to="'/dashboard/floor-1/' + item.number">
+							{{item.number}}
+					</router-link>
+				</li>
+			</ul>
+		</section>
+		</main>
+	</div>
 </template>
 
 <script>
 import NavDash from '../../components/Navdash.vue';
 export default {
 	components: { NavDash },
+	data() {
+		return {
+			images: [
+				{
+					number: '50',
+					description: 'the famous potatoeaters piece of van Gogh',
+					imageUrl: 'aardappeleters-min.jpg',
+				},
+				{
+					number: '28',
+					description: 'The cottage',
+					imageUrl: 'thecottage-min.jpg',
+				},
+				{
+					number: '16',
+					description:
+						'The theme. An image of a woman in a blue dress to depict the theme Legacy of Van Gogh',
+					imageUrl: 'peasantheads-min.jpg',
+				},
+				{
+					number: '13',
+					description:
+						"The theme. An image of a portrait of Vincent's brother Theo to depict the theme Family Van Gogh",
+					imageUrl: 'stillbiblelife-min.jpg',
+				},
+				{
+					number: '41',
+					description:
+						'The theme. An image of red cabbages and onions to depict the theme Learning by doing',
+					imageUrl: 'skeletSigaret-min.jpg',
+				},
+				{
+					number: '55',
+					description:
+						'The theme. An image of a self portrait of Vincent with a grey felt hat to depict the theme The modern portrait',
+					imageUrl: 'headofprostitute-min.jpg',
+				},
+				{
+					number: '38',
+					description:
+						'The theme. An image of people eating potatoes to depict the theme Changing techniques',
+					imageUrl: 'treesandundergrowth-min.jpg',
+				},
+				{
+					number: '18',
+					description: 'The theme. An image of Sunflowers to depict the theme Simplicity',
+					imageUrl: 'gardenwithcourtingcouple-min.jpg',
+				},
+				{
+					number: '14',
+					description:
+						'The theme. An image of a wheatfield to depict the theme The wealth of nature',
+					imageUrl: 'grijzeVilthoed-min.jpg',
+				},
+				{
+					number: '30',
+					description:
+						'The theme. An image of self portrait as painter to depict the theme Driven and goal oriented',
+					imageUrl: 'portretAlsSchilder-min.jpg',
+				},
+				{
+					number: '02',
+					description:
+						'The theme. An image of the seascape new les saintes-maties-de-la-mer to depict the theme Color effects',
+					imageUrl: 'pinkOrchard-min.jpg',
+				},
+				{
+					number: '29',
+					description:
+						'The theme. An image of the hospital garden to depict the theme Work as a medicine',
+					imageUrl: 'anoldwomanofarles-min.jpg',
+				},
+				{
+					number: '53',
+					description:
+						'The theme. An image of almond blossoms to depict the theme In search of perfect light',
+					imageUrl: 'stoelVGauguin-min.jpg',
+				},
+				{
+					number: '37',
+					description: 'The theme. An image of a sower to depict the theme Conserving Van Gogh',
+					imageUrl: 'zaaier-min.jpg',
+				},
+				{
+					number: '04',
+					description:
+						'The theme. An image of a skeleton who is smoking to depict the theme A different mind',
+					imageUrl: 'yellowhouse-min.jpg',
+				},
+				{
+					number: '76',
+					description:
+						'The theme. An image of a skeleton who is smoking to depict the theme A different mind',
+					imageUrl: 'zonnebloemen-min.jpg',
+				},
+			],
+		}
+	}
 };
 </script>
 
