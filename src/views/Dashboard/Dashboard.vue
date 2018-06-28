@@ -215,7 +215,6 @@ export default {
 .dashboard--content {
 	background-color: black;
 	overflow: scroll;
-	padding: 2em;
 	main {
 		background-color: black;
 		@media screen and (min-width: 40em) {
