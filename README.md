@@ -4,7 +4,7 @@
   :chart_with_upwards_trend: :bar_chart: :tada: <img src="https://img.shields.io/badge/vanGogh-v1.0.0-yellow.svg">
 </div>
 <div align="center">
-  <strong>A real-time Markdown renderer for everyone!</strong>
+  <strong>van Gogh museum complete package for data analyzation</strong>
 </div>
 <br />
 
@@ -119,7 +119,7 @@ The following optimalizations have been/are to be implemented:
 - [ ] Service worker
 - [ ] Font subsetting
 - [ ] Fonts async loading
-- [-] Code-splitting
+- [ ] Code-splitting
 
 # Our Prototype application
 [Here it is.](https://github.com/VincentKempers/van-gogh-project)
