@@ -1,12 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
+const compression = require('compression');
 const { createBundleRenderer } = require('vue-server-renderer');
 const template = fs.readFileSync(path.resolve('./src/index.template.html'), 'utf-8');
 
 require('dotenv').config({ path: './vars.env' });
 
+const api = require('./api');
+
 const server = express();
+const httpServer = require('http').createServer(server);
+
+const sockets = require('./sockets');
+
+const io = require('socket.io')(httpServer);
+
+// Connect the sockets
+sockets(io);
+
+server.use(compression());
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 function createAppRenderer(serverBundle, options) {
@@ -21,8 +36,8 @@ function createAppRenderer(serverBundle, options) {
 
 const appRenderer = (function() {
 	if (isProduction) {
-		const serverBundle = require('../dist/vue-ssr-server-bundle.json');
-		const clientManifest = require('../dist/vue-ssr-client-manifest.json');
+		const serverBundle = require(`${__dirname}/assets/dist/vue-ssr-server-bundle.json`);
+		const clientManifest = require(`${__dirname}/assets/dist/vue-ssr-client-manifest.json`);
 
 		return createAppRenderer(serverBundle, { clientManifest });
 	} else {
@@ -50,7 +65,13 @@ function response(app, req, res) {
 	});
 }
 
-server.use('/', express.static(path.resolve('../dist/')));
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.json());
+
+server.use('/', express.static(`${__dirname}/dist`));
+server.use('/assets', express.static(`${__dirname}/assets`));
+
+server.use('/api', api);
 
 server.get('*', (req, res) => {
 	if (isProduction) {
@@ -62,10 +83,4 @@ server.get('*', (req, res) => {
 	}
 });
 
-const port = process.env.PORT;
-
-server.listen(port, () => {
-	console.log(`server started at localhost: ${port}`);
-});
-
-module.exports = server;
+module.exports = httpServer;
