@@ -54,7 +54,7 @@
 <script>
 	import { getUserTour } from '../../../../services/http-service.js';
 	import { getTime, getTimeDiff, formatDate } from '../../../../services/helpers.js';
-	import NavDash from '../../components/Navdash.vue';
+	import NavDash from '../../../components/Navdash.vue';
 	import LazyImage from '../../../components/LazyImage.vue';
 
 	export default {
