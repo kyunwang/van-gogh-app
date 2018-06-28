@@ -73,34 +73,72 @@ Our stack consists of the following main dependencies.
 
 
 # Data model
-
+We setup the model based on the tours instead of the paintings or works. If there was more time we could add this in the near future.
 ```JS
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const Painting = new Schema({
-	name: {
+const Tour = new Schema({
+	device_id: {
 		type: String,
-		isRequired: 'The name of the painting needs to be assinged',
+		isRequired: 'device needs an id',
 	},
-	location: {
+	current_way_point: {
 		type: Number,
-		isRequired: 'The floor/location of the painting needs to be defined',
+		default: 0, // 0 means pausing or walking / not at a tour item
 	},
-	painting_no: String,
-	origins: String,
-	description: String,
+	current_floor: Number,
+	start_tour_time: Date,
+	end_tour_time: Date,
+	date: {
+		type: Date,
+		default: helpers.getCurrentDate(),
+	},
+	cancelled: {
+		type: Boolean,
+		default: false,
+	},
+	completed: {
+		type: Boolean,
+		default: false,
+	},
+	tour: [
+		{
+			id: {
+				type: Number,
+				isRequired: 'Device needs an id',
+			},
+			start_time: Date,
+			end_time: Date,
+			type_tour: String,
+			painting: String,
+			painting_no: String,
+			imageUrl: String,
+			floor: Number,
+			origins: String,
+			description: String,
+			visited: {
+				type: Boolean,
+				default: false,
+			},
+			theme: {
+				type: String,
+				isRequired: 'A tour has to be assigned',
+			},
+			audio: [
+				{
+					title: String,
+					audio_url: String,
+				},
+			],
+		},
+	],
 });
 
-module.exports = mongoose.model('Painting', Painting);
-
+module.exports = mongoose.model('Tour', Tour);
 
 ```
 
 # Data lifecycle
 ![](/documents/images/datacycle1.jpg)
 
-# Visual flow
 
 # Optimalizations
 The following optimalizations have been/are to be implemented:
