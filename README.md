@@ -21,7 +21,7 @@ Van Gogh Multi-media Tour and Dashboard is a tour personalising and analytics so
 - [Getting started](#getting-started)
 - [Goal of the prototype](#goal-of-the-prototype)
 - [Features](#features)
-- [About the stack](#about-the-stack)
+- [Our stack](#about-the-stack)
 - [Data model](#)
 - [Data lifecycle](#)
 - [Optimalizations](#optimalizations)
@@ -60,7 +60,7 @@ The following are the features of the App and Dashboar side from the prototype.
 - Shows the details from each floor (Floor 1 only for the prototype)
 - Shows the details from each painting (One only for the prototype)
 
-# Our the stack
+# Our stack
 Our stack consists of the following main dependencies.
 
 - [Vue][vue]
