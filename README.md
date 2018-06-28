@@ -60,7 +60,7 @@ The following are the features of the App and Dashboar side from the prototype.
 - Shows the details from each floor (Floor 1 only for the prototype)
 - Shows the details from each painting (One only for the prototype)
 
-# About the stack
+# Our the stack
 Our stack consists of the following main dependencies.
 
 - [Vue][vue]
@@ -70,15 +70,6 @@ Our stack consists of the following main dependencies.
 - [Chart.js][chart.js]
 - [Socket.io][socket.io]
 
-We have chosen to work with Vue for the following reason:
-- We had an interest in learning Vue
-- Vue is quick to start with
-- The learning curve is relativly low
-
-And our reason for choosing to make the app SSR (Server Side Rendered)
-- SSR rendered applications are quicker
-- There are more options to improve performance
-- The application can be made to work without javascript support
 
 
 # Data model
