@@ -5,7 +5,7 @@ const { getCurrentDate } = require('../services/helpers');
 function sockets(io) {
 	// Data counter for the prototype. Will watch the counter ect for the dashboard
 	const tourCounter = {
-		activeTour: 12,
+		activeTour: 0,
 		paintings: {},
 	};
 
@@ -55,7 +55,8 @@ function sockets(io) {
 				}
 
 				const count = incrementCount(tourCounter.paintings[paintingId]);
-
+				tourCounter.paintings[paintingId] = count;
+				console.log('enter', count);
 				const piece = tour.tour.filter(painting => painting.painting_no === paintingId);
 
 				io.to('Dashboard').emit('sendPosition', piece[0], count, paintingId);
@@ -71,6 +72,9 @@ function sockets(io) {
 				}
 			).then(tour => {
 				const count = decrementCount(tourCounter.paintings[paintingId]);
+				tourCounter.paintings[paintingId] = count;
+				console.log('exit', count);
+
 				const piece = tour.tour.filter(painting => painting.painting_no === paintingId);
 				io.to('Dashboard').emit('exitAudio', piece[0], count, paintingId);
 			});
