@@ -1,37 +1,35 @@
 <template>
 	<div class="dashboard--content">
-		<nav>
-			<h1>MMT Dashboard</h1>
-		</nav>
+		<nav-dash></nav-dash>
 		<main>
 			<div class="navigation">
 				<ul>
-					<li>
-						<a class="verd0" href="/dashboard/verdieping-0">
+					<li class="floor0">
+						<a  href="/dashboard/floor-0">
 							<div>
 								<h3>Floor 0</h3>
 								<line-chart :chartData="floorZeroChart" :width="400" :height="200" />
 							</div>
 						</a>
 					</li>
-					<li>
-						<a class="verd1" href="/dashboard/verdieping-1">
+					<li class="floor1">
+						<a  href="/dashboard/floor-1">
 							<div>
 								<h3>Floor 1</h3>
 								<line-chart :chartData="floorOneChart" :width="400" :height="200" />
 							</div>
 						</a>
 					</li>
-					<li>
-						<a class="verd2" href="/dashboard/verdieping-2">
+					<li class="floor2">
+						<a href="/dashboard/floor-2">
 							<div>
 								<h3>Floor 2</h3>
 								<line-chart :chartData="floorTwoChart" :width="400" :height="200" />
 							</div>
 						</a>
 					</li>
-					<li>
-						<a class="verd3" href="/dashboard/verdieping-3">
+					<li class="floor3">
+						<a  href="/dashboard/floor-3">
 							<div>
 								<h3>Floor 3</h3>
 								<line-chart :chartData="floorThreeChart" :width="400" :height="200" />
@@ -46,31 +44,36 @@
 
 <script>
 import LineChart from '../../components/Charts/LineChart.vue';
+import NavDash from '../../components/Navdash.vue';
 
-import { generateFakeTime, createInterval } from '../../../services/helpers.js';
+import { generateFakeTime, createInterval, generateNumber } from '../../../services/helpers.js';
 
 export default {
-    name: 'Dashboard',
-    components: { LineChart },
-    data () {
-      return {
-		  	labels:['09:00', '09:15'],
-			floorZeroData: [0, 1],
+	name: 'Dashboard',
+	components: { LineChart, NavDash },
+	data() {
+		return {
+			labels: ['09:00', '09:15'],
+			floorZeroData: [2, 4],
 			floorOneData: [1, 12],
-			floorTwoData: [2, 5],
-			floorThreeData: [2, 5],
+			floorTwoData: [9, 5],
+			floorThreeData: [2, 7],
 			floorZeroChart: null,
 			floorOneChart: null,
 			floorTwoChart: null,
 			floorThreeChart: null,
-			socket: null
-      }
-    },
-    created () {
+			gradient: null,
+			gradient2: null,
+			gradient3: null,
+			gradient4: null,
+			socket: null,
+		};
+	},
+	created() {
 		this.fillData();
 	},
-    mounted () {
-		 // Create an socket instance for dashboard
+	mounted() {
+		// Create an socket instance for dashboard
 		this.socket = io();
 		this.socket.emit('Dashboard');
 
@@ -81,52 +84,74 @@ export default {
 		this.socket.on('exitAudio', this.exitAudio);
 
 		// Create a set interval
-		this.dataInterval = createInterval(1000, this.tourInterval);
-    },
-    methods: {
-      fillData () {
-		  this.floorZeroChart = {
-			labels: ['10:00', '12:00'],
+		this.dataInterval = createInterval(3000, this.tourInterval);
+
+		// gradient color 1
+		this.gradient = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 0, 450);
+
+		this.gradient.addColorStop(0, 'rgba(255, 0,0, 0.5)');
+		this.gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.25)');
+		this.gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
+
+		// gradient color 2
+		this.gradient2 = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 0, 450);
+
+		this.gradient2.addColorStop(0, 'rgb(65, 184, 131, 0.1)');
+		this.gradient2.addColorStop(0.5, 'rgb(65, 184, 131, 0.5)');
+		this.gradient2.addColorStop(1, 'rgb(65, 184, 131, 0.25)');
+	},
+	methods: {
+		fillData() {
+			(this.floorZeroChart = {
+				labels: this.labels,
 				datasets: [
 					{
 						label: 'people',
-						backgroundColor: '#f87979',
-						data: this.floorZeroData
+						pointBorderColor: 'white',
+						borderColor: '#f89842',
+						backgroundColor: this.gradient,
+						data: this.floorZeroData,
 					},
-				]
-			},
-		  this.floorOneChart = {
-			labels: this.labels,
-				datasets: [
-					{
-						label: 'people',
-						backgroundColor: '#f87979',
-						data: this.floorOneData
-					},
-				]
-			},
-			this.floorTwoChart = {
-				labels: ['10:00', '12:00'],
-				datasets: [
-					{
-						label: 'people',
-						backgroundColor: '#f87979',
-						data: this.floorTwoData
-					},
-				]
-			}
+				],
+			}),
+				(this.floorOneChart = {
+					labels: this.labels,
+					datasets: [
+						{
+							label: 'people',
+							pointBorderColor: 'white',
+							borderColor: '#f87979',
+							backgroundColor: this.gradient2,
+							data: this.floorOneData,
+						},
+					],
+				}),
+				(this.floorTwoChart = {
+					labels: this.labels,
+					datasets: [
+						{
+							label: 'people',
+							pointBorderColor: 'white',
+							borderColor: '#acd696',
+							backgroundColor: this.gradient3,
+							data: this.floorTwoData,
+						},
+					],
+				});
 			this.floorThreeChart = {
-				labels: ['10:00', '12:00'],
+				labels: this.labels,
 				datasets: [
 					{
 						label: 'people',
-						backgroundColor: '#f87979',
-						data: this.floorThreeData
+						pointBorderColor: 'white',
+						borderColor: '#00abdf',
+						backgroundColor: this.gradient4,
+						data: this.floorThreeData,
 					},
-				]
-			}
-      },
-      fetchData () {},
+				],
+			};
+		},
+		fetchData() {},
 		startTour(tourData, counter) {
 			this.updateTourData(tourData, counter);
 		},
@@ -136,130 +161,132 @@ export default {
 		completeTour(tourData, counter) {
 			this.updateTourData(tourData, counter);
 		},
-		sendPosition(tourData, counter) {
-		},
-		exitAudio(tourData, counter) {
-		},
+		sendPosition(tourData, counter) {},
+		exitAudio(tourData, counter) {},
 		updateTourData(tourData, counter) {
-				this.floorOneData.push(counter.activeTour);
+			this.floorOneData.push(counter);
+		},
+		generateVisitors() {
+			const labelsLength = this.labels.length;
+			const floorZeroLength = this.floorZeroData.length;
+
+			if (labelsLength !== floorZeroLength) {
+				this.floorZeroData.push(generateNumber(this.floorZeroData[this.floorZeroData.length - 1]));
+				this.floorTwoData.push(generateNumber(this.floorTwoData[this.floorTwoData.length - 1]));
+				this.floorThreeData.push(
+					generateNumber(this.floorThreeData[this.floorThreeData.length - 1])
+				);
+			}
+
+			if (labelsLength === 8) {
+				this.floorZeroData.splice(0, 1);
+				this.floorTwoData.splice(0, 1);
+				this.floorThreeData.splice(0, 1);
+			}
 		},
 		generateNewLabel() {
-				const lastLabel = this.labels[this.labels.length - 1];
-				const newLabel = generateFakeTime(lastLabel);
-				this.labels.push(newLabel);
+			const lastLabel = this.labels[this.labels.length - 1];
+			const newLabel = generateFakeTime(lastLabel);
+			this.labels.push(newLabel);
 		},
 		tourInterval() {
 			this.generateNewLabel();
 			const floorOneLength = this.floorOneData.length;
 			const labelsLength = this.labels.length;
+
 			if (labelsLength !== floorOneLength) {
 				this.floorOneData.push(this.floorOneData[floorOneLength - 1]);
 			}
+
+			this.generateVisitors();
 
 			if (labelsLength === 8) {
 				this.floorOneData.splice(0, 1);
 				this.labels.splice(0, 1);
 			}
+
 			this.fillData();
 		}
     }
   };
   </script>
-  
-<style lang="scss">
-body::before {
-	background: none;
-}
-header {
-	display: none;
-}
-</style>
 
 <style lang="scss" scoped>
 .dashboard--content {
-	nav {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 2rem;
-		background-color: rgba(0, 0, 0, 1);
-
-		#search {
-			height: 2rem;
-			border-radius: 0.8rem;
-			border: none;
+	background-color: black;
+	overflow: scroll;
+	padding: 2em;
+	main {
+		background-color: black;
+		@media screen and (min-width: 40em) {
+			height: 100vh;
+			width: 100vw;
 		}
-		h1 {
-			color: white;
+		// Desktop
+		@media screen and (min-width: 70em) {
+			height: 100vh;
+			width: 100vw;
 		}
 	}
-	main {
-		display: flex;
-		flex-direction: column;
-		h2 {
-			margin-bottom: 3rem;
-		}
-		section {
-			width: 100%;
-			margin: 3rem 0 4rem 2rem;
-			table {
-				border-collapse: collapse;
-				width: 50%;
-				tr:not(:first-child) {
-					border-bottom: 0.1rem solid black;
-				}
-				tr {
-					th {
-						color: rgba(224, 90, 50, 1);
-						font-size: 0.8em;
+	.navigation {
+		ul {
+			display: flex;
+			flex-flow: row wrap;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			@media screen and (min-width: 70em) {
+				margin: 2em;
+				align-self: center;
+			}
+			li {
+				margin: 2em 2em;
+				a {
+					text-decoration: none;
+					padding: 1rem 0rem;
+					div {
+						padding: 1.5em;
+						background-color: #454545;
+						border-radius: 1rem;
+						max-width: 86vw;
+						h3 {
+							color: white;
+							padding-left: 0.7em;
+						}
+						&:hover,
+						&:focus {
+							background-color: #7c7c7c;
+							div {
+								background-color: #7c7c7c;
+							}
+						}
 					}
-					td {
-						padding: 1rem 0rem;
-						text-align: center;
-						.busy {
-							color: red;
-						}
-						.fair {
-							color: orange;
-						}
-						.calm {
-							color: green;
+					&:focus {
+						background-color: #7c7c7c;
+						div {
+							background-color: #7c7c7c;
+							div {
+								background-color: #7c7c7c;
+							}
 						}
 					}
 				}
 			}
-		}
-		.button-floor {
-			background-color: black;
-			color: white;
-			border-radius: 0.8rem;
-			padding: 0.5rem 1rem;
-			border: none;
-			margin-left: 2rem;
-		}
-	}
-	.navigation {
-		position: absolute;
-		right: 0;
-		ul {
-			display: flex;
-			flex-direction: column;
-			margin: 0;
-			list-style: none;
-			li {
-				a {
-					text-decoration: none;
-					color: black;
-					padding: 1rem 0rem;
-					div {
-						padding: 0.5em;
-						background-color: black;
-						h3 {
-							color: white;
-						}
-					}
-				}
+			.floor0 {
+				order: 1;
+			}
+			.floor1 {
+				order: 2;
+			}
+			.floor2 {
+				order: 3;
+			}
+			.floor3 {
+				order: 4;
 			}
 		}
 	}

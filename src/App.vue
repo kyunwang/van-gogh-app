@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+<div id="app" :class="{ 'app-side': !this.$route.meta.dashboard }">
 	 <Header />
     <router-view></router-view>
 </div>
@@ -27,14 +27,14 @@ export default {
 		z-index: -1;
 	}
 
-	@media all and (min-width: 60rem) {
-		html, body {
-			max-width: 50rem;
-			margin: 0 auto;
-		}
-	}
+	// @media all and (min-width: 60rem) {
+	// 	html, body {
+	// 		max-width: 50rem;
+	// 		margin: 0 auto;
+	// 	}
+	// }
 
-	body {
+	.app-side {
 		&::before {
 			content: "";
 			height: 55%;
@@ -62,6 +62,10 @@ export default {
 
 	h4 {
 		margin: 1rem 0;
+	}
+
+	ul {
+		list-style: none;
 	}
 
 </style>

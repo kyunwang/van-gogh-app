@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const uuidv4 = require('uuid/v4');
 
 const Tour = require('../models/Tour');
 
@@ -19,11 +20,11 @@ const exampleTourComplete = [
 		theme: 'changing techniques',
 		audio: [
 			{
-				title: '',
+				title: 'In their home',
 				audio_url: '50a_DUT.wav',
 			},
 			{
-				title: '',
+				title: 'A shocking response',
 				audio_url: '50b_DUT.wav',
 			},
 		],
@@ -41,11 +42,11 @@ const exampleTourComplete = [
 		theme: 'a different mind',
 		audio: [
 			{
-				title: '',
+				title: 'Smoking a lot',
 				audio_url: '41a_DUT.wav',
 			},
 			{
-				title: '',
+				title: "A look into Van Gogh's classroom",
 				audio_url: '41b_0_DUT.wav',
 			},
 		],
@@ -63,7 +64,7 @@ const exampleTourComplete = [
 		theme: 'the modern portrait',
 		audio: [
 			{
-				title: '',
+				title: 'Scientific theories',
 				audio_url: '14a_DUT.wav',
 			},
 		],
@@ -80,7 +81,7 @@ const exampleTourComplete = [
 		theme: 'color effects',
 		audio: [
 			{
-				title: '',
+				title: 'Love is in the air',
 				audio_url: '18a_DUT.wav',
 			},
 		],
@@ -89,7 +90,7 @@ const exampleTourComplete = [
 		id: 9238901,
 		type_tour: 'related',
 		painting: 'The pink orchard',
-		painting_no: '2',
+		painting_no: '02',
 		imageUrl: 'pinkOrchard-min.jpg',
 		floor: 1,
 		origins: 'De roze boomgaard 1888',
@@ -97,7 +98,7 @@ const exampleTourComplete = [
 		theme: 'the wealth of nature',
 		audio: [
 			{
-				title: '',
+				title: 'A trio',
 				audio_url: '2a_DUT.wav',
 			},
 		],
@@ -114,7 +115,7 @@ const exampleTourComplete = [
 		theme: 'in search of perfect light',
 		audio: [
 			{
-				title: '',
+				title: 'Full of light',
 				audio_url: '76a_DUT.wav',
 			},
 		],
@@ -123,7 +124,7 @@ const exampleTourComplete = [
 		id: 9238901,
 		type_tour: 'main tour',
 		painting: 'The yellow house',
-		painting_no: '4',
+		painting_no: '04',
 		imageUrl: 'geleHuis-min.jpg',
 		floor: 1,
 		origins: 'The street 1888',
@@ -131,15 +132,15 @@ const exampleTourComplete = [
 		theme: 'color effects',
 		audio: [
 			{
-				title: '',
+				title: 'A house with a plan',
 				audio_url: '4a_DUT.wav',
 			},
 			{
-				title: '',
+				title: 'Big things in a little house',
 				audio_url: '4b_1a_DUT.wav',
 			},
 			{
-				title: '',
+				title: 'A guest',
 				audio_url: '4b_1b_DUT.wav',
 			},
 		],
@@ -156,11 +157,11 @@ const exampleTourComplete = [
 		theme: 'painter friend',
 		audio: [
 			{
-				title: '',
+				title: "Gaugiun's Chair",
 				audio_url: '53a_DUT.wav',
 			},
 			{
-				title: '',
+				title: 'Compare the chairs',
 				audio_url: '53b_0_DUT.wav',
 			},
 		],
@@ -169,7 +170,7 @@ const exampleTourComplete = [
 
 router.post('/tour-select', async (req, res) => {
 	const tour = new Tour({
-		device_id: 'sha12u3812',
+		device_id: uuidv4(),
 		start_tour_time: getCurrentDate(),
 		tour: exampleTourComplete,
 	});
@@ -238,6 +239,30 @@ router.put('/complete-tour', async (req, res) => {
 		}
 	).then(tour => {
 		res.send(tour);
+	});
+});
+
+router.get('/device-detail/:deviceId', async (req, res) => {
+	const { deviceId } = req.params;
+
+	Tour.findOne({ device_id: deviceId }).then(tour => {
+		res.send(tour);
+		
+	});
+});
+
+router.get('/painting-devices/:paintingId', async (req, res) => {
+	const { paintingId } = req.params;
+	
+	Tour.find({ 'tour.painting_no': paintingId }).then(tour => {
+		
+		res.send(tour);
+	});
+});
+
+router.get('/devices', (req, res) => {
+	Tour.find({}).then(tours => {
+		res.send(tours);
 	});
 });
 

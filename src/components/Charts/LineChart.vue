@@ -15,10 +15,16 @@ export default {
 					yAxes: [
 						{
 							ticks: {
+								fontColor: 'white',
 								beginAtZero: true,
+								stepSize: 2,
+								suggestedMin: 0,
+								suggestedMax: 16,
+								maxTicksLimit: 6
 							},
 							gridLines: {
 								display: true,
+								color: 'rgba(174,174,175,.2)'
 							},
 						},
 					],
@@ -26,15 +32,20 @@ export default {
 						{
 							gridLines: {
 								display: false,
+								
 							},
+							ticks:{
+								fontColor: "white",
+							}
 						},
 					],
 				},
 				legend: {
-					display: true,
+					display: false,
 				},
 				responsive: true,
 				maintainAspectRatio: false,
+				animation: false,
 			},
 		};
 	},
