@@ -81,6 +81,7 @@ function createRouter() {
 					title: 'MMT Dashboard',
 					returnPath: '',
 					returnLabel: '',
+					dashboard: true,
 				},
 			},
 			{
@@ -91,6 +92,7 @@ function createRouter() {
 					title: 'MMT Dashboard',
 					returnPath: '',
 					returnLabel: '',
+					dashboard: true,
 				},
 			},
 			{
@@ -101,6 +103,7 @@ function createRouter() {
 					title: 'MMT Dashboard',
 					returnPath: '',
 					returnLabel: '',
+					dashboard: true,
 				},
 			},
 			{
@@ -111,6 +114,7 @@ function createRouter() {
 					title: 'MMT Dashboard',
 					returnPath: '',
 					returnLabel: '',
+					dashboard: true,
 				},
 			},
 			{
@@ -121,6 +125,7 @@ function createRouter() {
 					title: 'MMT Dashboard',
 					returnPath: '',
 					returnLabel: '',
+					dashboard: true,
 				},
 			},
 			{
@@ -131,6 +136,7 @@ function createRouter() {
 					title: 'MMT Dashboard',
 					returnPath: '',
 					returnLabel: '',
+					dashboard: true,
 				},
 			},
 			{
@@ -141,6 +147,7 @@ function createRouter() {
 					title: 'MMT Dashboard',
 					returnPath: '',
 					returnLabel: '',
+					dashboard: true,
 				},
 			},
 		],

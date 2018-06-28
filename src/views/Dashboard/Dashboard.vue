@@ -206,19 +206,10 @@ export default {
 			}
 
 			this.fillData();
-		},
-	},
-};
-</script>
-  
-<style lang="scss">
-body::before {
-	background: none;
-}
-.app--header {
-	display: none;
-}
-</style>
+		}
+    }
+  };
+  </script>
 
 <style lang="scss" scoped>
 .dashboard--content {
