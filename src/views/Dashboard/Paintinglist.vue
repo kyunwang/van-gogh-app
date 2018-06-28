@@ -3,8 +3,11 @@
         <nav-dash>
         </nav-dash>
 		<main>
+		<section class="linechart">
+			<h2>Paintings floor 0 <span>Every painting on the first floor</span></h2>
+		</section>
     <section class="linechart">
-			<h2>Floor 1 <span>Every painting on every floor</span></h2>
+			<h2>Paintings floor 1 <span>Every painting on the first floor</span></h2>
 			<ul>
 				<li v-for="(item,index) in images" :key="index" :style="{backgroundImage:`url(/assets/images/${item.imageUrl})`}">
 					<router-link :to="'/dashboard/floor-1/' + item.number">
@@ -12,6 +15,12 @@
 					</router-link>
 				</li>
 			</ul>
+		</section>
+				<section class="linechart">
+			<h2>Paintings floor 2 <span>Every painting on the first floor</span></h2>
+		</section>
+				<section class="linechart">
+			<h2>Paintings floor 3 <span>Every painting on the first floor</span></h2>
 		</section>
 		</main>
 	</div>
@@ -135,10 +144,11 @@ export default {
 		}
 	}
 	main {
+		padding: 0 2em;
 		background-color: black;
 		@media screen and (min-width: 40em) {
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			justify-content: space-between;
 		}
 		.linechart {
@@ -167,11 +177,11 @@ export default {
 				flex-wrap: wrap;
 				margin-right: 2em;
 				list-style: none;
-				overflow: scroll;
-				height: 10em;
 				li {
 					background-color: black;
 					border-radius: 1rem;
+					background-size: cover;
+					background-repeat: no-repeat;
 					margin-right: 0.3em;
 					margin-bottom: 0.5em;
 					@media screen and (min-width: 40em) {
@@ -180,7 +190,7 @@ export default {
 					}
 					a {
 						display: block;
-						padding: 0.3em 2.5em;
+						padding: 3.3em 3.5em;
 						color: white;
 					}
 				}
