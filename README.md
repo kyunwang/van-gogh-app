@@ -16,8 +16,11 @@
 
 Van Gogh Multi-media Tour and Dashboard is a tour personalising and analytics solution made with SSR Vue/Vuex/Node. This application is a concept prototype made for the Van Gogh Museum in Amsterdam.
 
-The prototype can be found [here live][live]
+The prototype can be found [here live][live] - made for smaller screens
 
+The dashboard can be found [here live][live-d]
+
+*NOTE: The data is not fully live. Only floor 1 react on user input.*
 
 # Table of Content
 - [Getting started](#getting-started)
@@ -369,3 +372,4 @@ Audio files and Art images copyright Van Gogh Museum
 
 [myPr]: https://github.com/VincentKempers/van-gogh-app/pulls?q=is%3Apr+author%3Akyunwang+is%3Aclosed
 [live]: https://vgm-tour.herokuapp.com
+[live-d]: https://vgm-tour.herokuapp.com/dashboard
